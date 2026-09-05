@@ -40,7 +40,7 @@
             background-color: var(--paper);
             color: var(--ink);
             line-height: 1.6;
-            padding-bottom: 5rem;
+            padding-bottom: 2.5rem;
         }
 
         /* ---------- Header ---------- */
@@ -49,7 +49,7 @@
             position: relative;
             background-color: var(--pine);
             color: #eef2ea;
-            padding: 4.5rem 1.5rem 5.5rem 1.5rem;
+            padding: 2.25rem 1.5rem 2.5rem 1.5rem;
             overflow: hidden;
         }
 
@@ -72,34 +72,34 @@
         }
 
         .header-eyebrow {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: #cfe0d4;
             font-style: italic;
             font-family: var(--font-display);
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.5rem;
         }
 
         h1 {
             font-family: var(--font-display);
-            font-size: 3.2rem;
+            font-size: 2.15rem;
             font-weight: 500;
-            line-height: 1.05;
+            line-height: 1.1;
             letter-spacing: -0.01em;
-            margin-bottom: 1rem;
-            max-width: 14ch;
+            margin-bottom: 0.6rem;
+            max-width: 20ch;
         }
 
         header p.lede {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #d6e2d9;
             max-width: 46ch;
-            margin-bottom: 2.75rem;
+            margin-bottom: 1.5rem;
         }
 
         .search-container {
-            max-width: 520px;
+            max-width: 460px;
             border-bottom: 1.5px solid rgba(238,242,234,0.45);
-            padding-bottom: 0.6rem;
+            padding-bottom: 0.4rem;
             transition: border-color 0.2s ease;
         }
 
@@ -109,10 +109,10 @@
 
         .search-label {
             display: block;
-            font-size: 0.72rem;
+            font-size: 0.68rem;
             letter-spacing: 0.04em;
             color: #a9c2b0;
-            margin-bottom: 0.4rem;
+            margin-bottom: 0.3rem;
         }
 
         #search-input {
@@ -121,9 +121,9 @@
             border: none;
             outline: none;
             font-family: var(--font-body);
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #f4f7f1;
-            padding: 0.15rem 0;
+            padding: 0.1rem 0;
         }
 
         #search-input::placeholder {
@@ -145,21 +145,21 @@
             flex-wrap: wrap;
             gap: 1rem;
             border-bottom: 1px solid var(--line);
-            margin: 3rem 0 2.5rem 0;
+            margin: 1.5rem 0 1.75rem 0;
             padding-bottom: 0;
         }
 
         .filter-row-label {
             font-family: var(--font-display);
             font-style: italic;
-            font-size: 1.05rem;
+            font-size: 0.98rem;
             color: var(--ink-soft);
-            padding-bottom: 0.9rem;
+            padding-bottom: 0.7rem;
         }
 
         .filter-buttons {
             display: flex;
-            gap: 1.75rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
         }
 
@@ -168,11 +168,11 @@
             border: none;
             border-bottom: 2px solid transparent;
             font-family: var(--font-body);
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             font-weight: 500;
             color: var(--ink-soft);
             cursor: pointer;
-            padding: 0 0 0.9rem 0;
+            padding: 0 0 0.7rem 0;
             transition: color 0.15s ease, border-color 0.15s ease;
         }
 
@@ -185,24 +185,27 @@
             border-color: var(--brass);
         }
 
-        /* ---------- Tour list (editorial rows) ---------- */
+        /* ---------- Tour list (compact grid) ---------- */
 
         .tours-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .tour-card {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 2.25rem;
-            padding: 2.5rem 0;
-            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: var(--card);
             text-decoration: none;
+            transition: border-color 0.18s ease;
         }
 
-        .tour-card:last-child {
-            border-bottom: 1px solid var(--line);
+        .tour-card:hover {
+            border-color: var(--line-strong);
         }
 
         .tour-image-wrapper {
@@ -210,7 +213,6 @@
             aspect-ratio: 4 / 3;
             width: 100%;
             overflow: hidden;
-            border-radius: 3px;
             background-color: var(--paper-deep);
         }
 
@@ -230,13 +232,15 @@
         .tour-content {
             display: flex;
             flex-direction: column;
+            padding: 1.1rem 1.25rem 1.35rem;
+            flex-grow: 1;
         }
 
         .tour-meta {
             display: flex;
-            gap: 1.1rem;
-            margin-bottom: 0.85rem;
-            font-size: 0.82rem;
+            gap: 1rem;
+            margin-bottom: 0.55rem;
+            font-size: 0.76rem;
         }
 
         .badge {
@@ -265,25 +269,24 @@
 
         .tour-title {
             font-family: var(--font-display);
-            font-size: 1.55rem;
+            font-size: 1.2rem;
             font-weight: 500;
             line-height: 1.25;
             color: var(--ink);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .tour-location {
-            font-size: 0.88rem;
+            font-size: 0.8rem;
             color: var(--brass-deep);
-            margin-bottom: 0.9rem;
+            margin-bottom: 0.55rem;
             font-weight: 500;
         }
 
         .tour-description {
-            font-size: 0.98rem;
+            font-size: 0.88rem;
             color: var(--ink-soft);
-            margin-bottom: 1.5rem;
-            max-width: 56ch;
+            margin-bottom: 1rem;
             flex-grow: 1;
         }
 
@@ -292,16 +295,16 @@
         }
 
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            display: block;
+            width: 100%;
+            text-align: center;
             background: none;
             color: var(--pine);
             border: 1px solid var(--pine);
-            padding: 0.65rem 1.3rem;
+            padding: 0.55rem 1rem;
             border-radius: 2px;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             transition: background-color 0.18s ease, color 0.18s ease;
         }
@@ -313,24 +316,23 @@
 
         .no-results {
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 2.5rem 1rem;
             color: var(--ink-soft);
             font-family: var(--font-display);
             font-style: italic;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             display: none;
             border-top: 1px solid var(--line);
         }
 
         @media (max-width: 720px) {
-            header { padding: 3rem 1.25rem 3.5rem 1.25rem; }
-            h1 { font-size: 2.3rem; }
-            .tour-card {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-                padding: 2rem 0;
-            }
-            .tour-image-wrapper { aspect-ratio: 16 / 10; }
+            header { padding: 1.75rem 1.25rem 2.25rem 1.25rem; }
+            h1 { font-size: 1.75rem; }
+            .tours-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            .tours-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -454,7 +456,7 @@
                 );
 
                 if (matchesCategory && matchesSearch) {
-                    card.style.display = 'grid';
+                    card.style.display = 'flex';
                     visibleCount++;
                 } else {
                     card.style.display = 'none';
