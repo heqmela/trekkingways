@@ -1,200 +1,405 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TrekkingWays | Curated Outdoor Trails & Guided Treks</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --primary: #1b4332;
-      --primary-hover: #2d6a4f;
-      --accent: #d8f3dc;
-      --text: #2b2b2b;
-      --text-muted: #6c757d;
-      --bg: #f8f9fa;
-      --card-bg: #ffffff;
-      --border: #e9ecef;
-      --radius: 12px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.5; }
-
-    /* Header & Nav */
-    header { background-color: var(--primary); color: white; padding: 2.5rem 1rem 3.5rem; text-align: center; }
-    .brand { font-size: 2.25rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
-    .tagline { font-size: 1rem; color: var(--accent); max-width: 600px; margin: 0 auto; opacity: 0.95; }
-
-    /* Search & Filters Container */
-    .controls-container { max-width: 1100px; margin: -1.75rem auto 2rem; padding: 0 1rem; }
-    .search-box { background: var(--card-bg); padding: 0.85rem 1.2rem; border-radius: var(--radius); box-shadow: 0 4px 14px rgba(0,0,0,0.08); display: flex; gap: 10px; }
-    .search-input { width: 100%; border: none; outline: none; font-size: 1rem; font-family: inherit; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrekkingWays — Curated Outdoor Experiences & Treks</title>
     
-    .filter-pills { display: flex; gap: 8px; margin-top: 1.25rem; flex-wrap: wrap; justify-content: center; }
-    .pill { background: white; border: 1px solid var(--border); padding: 0.45rem 1.1rem; border-radius: 20px; font-size: 0.875rem; cursor: pointer; font-weight: 500; transition: all 0.2s; color: var(--text); }
-    .pill.active, .pill:hover { background: var(--primary); color: white; border-color: var(--primary); }
+    <!-- GetYourGuide Analytics -->
+    <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="GVCQKUI"></script>
 
-    /* Main Grid */
-    main { max-width: 1100px; margin: 0 auto; padding: 0 1rem 4rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.75rem; }
+    <style>
+        :root {
+            --primary: #1b4332;
+            --primary-hover: #2d6a4f;
+            --accent: #52b788;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --border: #dee2e6;
+            --radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
 
-    /* Cards */
-    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
-    .card-img { width: 100%; height: 200px; object-fit: cover; background-color: #e2e8f0; }
-    .card-body { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
-    
-    .card-meta { display: flex; gap: 8px; margin-bottom: 0.6rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
-    .badge { padding: 3px 9px; border-radius: 4px; }
-    .badge-easy { background: #e8f5e9; color: #2e7d32; }
-    .badge-mod { background: #fff3e0; color: #ef6c00; }
-    .badge-hard { background: #ffebee; color: #c62828; }
-    .duration { background: #f1f3f5; color: var(--text-muted); }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-    .card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.25rem; color: #111827; line-height: 1.3; }
-    .card-region { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; font-weight: 500; }
-    .card-desc { font-size: 0.9rem; color: #4b5563; margin-bottom: 1.25rem; flex-grow: 1; line-height: 1.5; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 4rem;
+        }
 
-    /* CTA Area */
-    .gyg-widget-area { margin-top: auto; padding-top: 1rem; border-top: 1px dashed var(--border); }
-    .cta-btn { display: block; width: 100%; text-align: center; background: var(--primary); color: white; text-decoration: none; padding: 0.7rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; transition: background 0.2s; }
-    .cta-btn:hover { background: var(--primary-hover); }
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 1rem 4rem 1rem;
+            text-align: center;
+        }
 
-    footer { text-align: center; padding: 2.5rem 1rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); background-color: #ffffff; }
-  </style>
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #d8f3dc;
+            margin-bottom: 2rem;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: var(--radius);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        #search-input:focus {
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: -2rem auto 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background-color: white;
+            border: 1px solid var(--border);
+            padding: 0.6rem 1.25rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--text-main);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .tours-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .tour-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border);
+        }
+
+        .tour-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .tour-image-wrapper {
+            position: relative;
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #e9ecef;
+        }
+
+        .tour-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .tour-card:hover .tour-image-wrapper img {
+            transform: scale(1.03);
+        }
+
+        .tour-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .tour-meta {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .badge-difficulty {
+            background-color: #e2f0d9;
+            color: #386641;
+        }
+
+        .badge-duration {
+            background-color: #e9ecef;
+            color: #495057;
+        }
+
+        .tour-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        .tour-location {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .tour-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .tour-action {
+            margin-top: auto;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .tours-grid { grid-template-columns: 1fr; }
+            header { padding: 2rem 1rem 3rem 1rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <div class="brand">TrekkingWays</div>
-    <div class="tagline">Find & book hand-picked day walks, coastal paths, and summit treks.</div>
-  </header>
-
-  <div class="controls-container">
-    <div class="search-box">
-      <input type="text" id="searchInput" class="search-input" placeholder="Search by destination or keyword (e.g., Scotland, Etna, Finisterre)...">
-    </div>
-    <div class="filter-pills">
-      <button class="pill active" onclick="filterCategory('all', event)">All Routes</button>
-      <button class="pill" onclick="filterCategory('coastal', event)">Coastal Walks</button>
-      <button class="pill" onclick="filterCategory('day', event)">Day Hikes</button>
-      <button class="pill" onclick="filterCategory('multiday', event)">Summit & Treks</button>
-    </div>
-  </div>
-
-  <main>
-    <div class="grid" id="trailGrid">
-      
-      <!-- Walk One: Scottish Highlands -->
-      <article class="card" data-category="day">
-        <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80" alt="Scottish Highlands Lochs and Glens" class="card-img">
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="badge badge-mod">Moderate</span>
-            <span class="badge duration">Full Day</span>
-          </div>
-          <h2 class="card-title">Scottish Highlands Tour & Whisky Tasting</h2>
-          <div class="card-region">Edinburgh • Scotland</div>
-          <p class="card-desc">Experience iconic Scottish glens, pristine highland lochs, and a local distillery tasting on a guided small-group day excursion from Edinburgh.</p>
-          <div class="gyg-widget-area">
-            <a href="https://www.getyourguide.com/edinburgh-l44/full-day-highland-lochs-glens-and-whisky-small-group-tour-t3257/?partner_id=GVCQKUI" 
-               class="cta-btn" 
-               target="_blank" 
-               rel="noopener">
-              Check Tour Availability
-            </a>
-          </div>
+    <header>
+        <div class="header-content">
+            <h1>TrekkingWays</h1>
+            <p>Find & book hand-picked day walks, coastal paths, and summit treks.</p>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search by destination or keyword (e.g., Scotland, Etna, Finisterre)..." autocomplete="off">
+            </div>
         </div>
-      </article>
+    </header>
 
-      <!-- Walk Two: Finisterre & Costa da Morte -->
-      <article class="card" data-category="coastal">
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Costa da Morte Coastline" class="card-img">
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="badge badge-easy">Easy</span>
-            <span class="badge duration">7-Stop Tour</span>
-          </div>
-          <h2 class="card-title">Finisterre, Muxía & Costa da Morte</h2>
-          <div class="card-region">Santiago de Compostela • Spain</div>
-          <p class="card-desc">Explore Galicia's dramatic Coast of Death, visiting the legendary Cape Finisterre, historic Muxía, and scenic coastal stops beyond the Camino path.</p>
-          <div class="gyg-widget-area">
-            <a href="https://www.getyourguide.com/santiago-de-compostela-l153/from-santiago-finisterre-muxia-costa-da-morte-7-stop-tour-t254852/?partner_id=GVCQKUI" 
-               class="cta-btn" 
-               target="_blank" 
-               rel="noopener">
-              Check Tour Availability
-            </a>
-          </div>
+    <main class="main-container">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Routes</button>
+            <button class="filter-btn" data-filter="coastal">Coastal Walks</button>
+            <button class="filter-btn" data-filter="day-hikes">Day Hikes</button>
+            <button class="filter-btn" data-filter="summit">Summit & Treks</button>
         </div>
-      </article>
 
-      <!-- Walk Three: Mount Etna -->
-      <article class="card" data-category="multiday">
-        <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=600&q=80" alt="Mount Etna Volcanic Trek" class="card-img">
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="badge badge-hard">Hard</span>
-            <span class="badge duration">5-6 Hours</span>
-          </div>
-          <h2 class="card-title">Mount Etna Summit Trekking Tour</h2>
-          <div class="card-region">Piano Provenzana • Sicily, Italy</div>
-          <p class="card-desc">Ascend Europe's highest active volcano alongside an alpine guide. Traverse volcanic craters, ancient lava fields, and high-altitude lunar landscapes.</p>
-          <div class="gyg-widget-area">
-            <a href="https://www.getyourguide.com/piano-provenzana-l180255/mount-etna-summit-trekking-tour-t504814/?partner_id=GVCQKUI" 
-               class="cta-btn" 
-               target="_blank" 
-               rel="noopener">
-              Check Tour Availability
-            </a>
-          </div>
+        <div class="tours-grid" id="tours-grid">
+            
+            <!-- Tour 1: Scottish Highlands -->
+            <div class="tour-card" data-category="day-hikes" data-keywords="scotland highlands whisky tasting edinburgh glens lochs distillery">
+                <div class="tour-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Scottish Highlands landscape" loading="lazy">
+                </div>
+                <div class="tour-content">
+                    <div class="tour-meta">
+                        <span class="badge badge-difficulty">Moderate</span>
+                        <span class="badge badge-duration">Full Day</span>
+                    </div>
+                    <h3 class="tour-title">Scottish Highlands Tour & Whisky Tasting</h3>
+                    <div class="tour-location">📍 Edinburgh • Scotland</div>
+                    <p class="tour-description">Experience iconic Scottish glens, pristine highland lochs, and a local distillery tasting on a guided small-group day excursion from Edinburgh.</p>
+                    <div class="tour-action">
+                        <a href="https://www.getyourguide.com/edinburgh-l46/scottish-highlands-tour-whisky-tasting-txxxxxx/?partner_id=GVCQKUI" class="btn" target="_blank" rel="sponsored">Check Tour Availability</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 2: Finisterre -->
+            <div class="tour-card" data-category="coastal" data-keywords="finisterre muxia costa da morte galicia santiago camino lighthouse shell">
+                <div class="tour-image-wrapper">
+                    <!-- Updated custom image with Camino shell boundary -->
+                    <img src="image_5f9729.jpg" alt="Finisterre lighthouse and Camino shell marker" loading="lazy">
+                </div>
+                <div class="tour-content">
+                    <div class="tour-meta">
+                        <span class="badge badge-difficulty">Easy</span>
+                        <span class="badge badge-duration">7-Stop Tour</span>
+                    </div>
+                    <h3 class="tour-title">Finisterre, Muxía & Costa da Morte</h3>
+                    <div class="tour-location">📍 Santiago de Compostela • Spain</div>
+                    <p class="tour-description">Explore Galicia's dramatic Coast of Death, visiting the legendary Cape Finisterre, historic Muxía, and scenic coastal stops beyond the Camino path.</p>
+                    <div class="tour-action">
+                        <a href="https://www.getyourguide.com/santiago-de-compostela-l338/finisterre-muxia-costa-da-morte-tour-txxxxxx/?partner_id=GVCQKUI" class="btn" target="_blank" rel="sponsored">Check Tour Availability</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tour 3: Mount Etna -->
+            <div class="tour-card" data-category="summit" data-keywords="mount etna summit trekking piano provenzana sicily volcano craters lava">
+                <div class="tour-image-wrapper">
+                    <!-- Updated custom image of Mount Etna volcano crater -->
+                    <img src="image_5f9787.jpg" alt="Mount Etna active volcanic crater landscape" loading="lazy">
+                </div>
+                <div class="tour-content">
+                    <div class="tour-meta">
+                        <span class="badge badge-difficulty">Hard</span>
+                        <span class="badge badge-duration">5-6 Hours</span>
+                    </div>
+                    <h3 class="tour-title">Mount Etna Summit Trekking Tour</h3>
+                    <div class="tour-location">📍 Piano Provenzana • Sicily, Italy</div>
+                    <p class="tour-description">Ascend Europe's highest active volcano alongside an alpine guide. Traverse volcanic craters, ancient lava fields, and high-altitude lunar landscapes.</p>
+                    <div class="tour-action">
+                        <a href="https://www.getyourguide.com/etna-l867/mount-etna-summit-trekking-tour-txxxxxx/?partner_id=GVCQKUI" class="btn" target="_blank" rel="sponsored">Check Tour Availability</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </article>
 
-    </div>
-  </main>
+        <div class="no-results" id="no-results">
+            <p>No matching routes found. Try searching for another destination or keyword.</p>
+        </div>
+    </main>
 
-  <footer>
-    <p>&copy; 2026 TrekkingWays. All rights reserved. Official partner of GetYourGuide.</p>
-  </footer>
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const tourCards = document.querySelectorAll('.tour-card');
+        const noResults = document.getElementById('no-results');
 
-  <script>
-    function filterCategory(cat, event) {
-      const cards = document.querySelectorAll('.card');
-      const pills = document.querySelectorAll('.pill');
+        let currentFilter = 'all';
+        let searchQuery = '';
 
-      pills.forEach(p => p.classList.remove('active'));
-      if(event) event.target.classList.add('active');
+        function filterTours() {
+            let visibleCount = 0;
 
-      cards.forEach(card => {
-        if (cat === 'all' || card.dataset.category === cat) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
+            tourCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const keywords = card.getAttribute('data-keywords');
+                const title = card.querySelector('.tour-title').textContent.toLowerCase();
+                const description = card.querySelector('.tour-description').textContent.toLowerCase();
+                const location = card.querySelector('.tour-location').textContent.toLowerCase();
+
+                const matchesCategory = (currentFilter === 'all' || category === currentFilter);
+                const matchesSearch = (
+                    searchQuery === '' || 
+                    title.includes(searchQuery) || 
+                    description.includes(searchQuery) || 
+                    location.includes(searchQuery) || 
+                    keywords.includes(searchQuery)
+                );
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
         }
-      });
-    }
 
-    document.getElementById('searchInput').addEventListener('input', function(e) {
-      const query = e.target.value.toLowerCase();
-      const cards = document.querySelectorAll('.card');
+        // Search input listener
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.trim().toLowerCase();
+            filterTours();
+        });
 
-      cards.forEach(card => {
-        const title = card.querySelector('.card-title').innerText.toLowerCase();
-        const region = card.querySelector('.card-region').innerText.toLowerCase();
-        const desc = card.querySelector('.card-desc').innerText.toLowerCase();
-        
-        if (title.includes(query) || region.includes(query) || desc.includes(query)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  </script>
+        // Filter button listeners
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.getAttribute('data-filter');
+                filterTours();
+            });
+        });
+    </script>
 </body>
 </html>
