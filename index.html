@@ -426,25 +426,6 @@
             margin-bottom: 1rem;
         }
 
-        .btn-primary {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background-color: var(--pine);
-            color: #f4f7f1;
-            border: 1px solid var(--pine);
-            padding: 0.7rem 1rem;
-            border-radius: 2px;
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 600;
-            transition: background-color 0.18s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--pine-mid);
-        }
-
         .no-results {
             grid-column: 1 / -1;
             text-align: center;
@@ -517,7 +498,7 @@
                         <h3 class="tour-title">Scottish Highlands tour and whisky tasting</h3>
                         <div class="tour-location">Edinburgh, Scotland</div>
                         <p class="tour-description">Experience iconic Scottish glens, pristine highland lochs, and a local distillery tasting on a guided small-group day excursion from Edinburgh.</p>
-                        <div class="card-action-hint">View details & live calendar →</div>
+                        <div class="card-action-hint">View details & live widget →</div>
                     </div>
                 </div>
 
@@ -534,7 +515,7 @@
                         <h3 class="tour-title">Finisterre, Muxía and Costa da Morte</h3>
                         <div class="tour-location">Santiago de Compostela, Spain</div>
                         <p class="tour-description">Explore Galicia's dramatic Coast of Death, visiting the legendary Cape Finisterre, historic Muxía, and scenic coastal stops beyond the Camino path.</p>
-                        <div class="card-action-hint">View details & live calendar →</div>
+                        <div class="card-action-hint">View details & live widget →</div>
                     </div>
                 </div>
 
@@ -552,7 +533,7 @@
                         <h3 class="tour-title">Mount Etna summit trekking tour</h3>
                         <div class="tour-location">Piano Provenzana, Sicily, Italy</div>
                         <p class="tour-description">Ascend Europe's highest active volcano alongside an alpine guide. Traverse volcanic craters, ancient lava fields, and high-altitude lunar landscapes.</p>
-                        <div class="card-action-hint">View details & live calendar →</div>
+                        <div class="card-action-hint">View details & live widget →</div>
                     </div>
                 </div>
 
@@ -561,7 +542,7 @@
                 </div>
             </div>
 
-            <!-- Right Side (40%): Sticky Detail & Live Booking Preview Panel -->
+            <!-- Right Side (40%): Sticky Detail & Live Booking Widget Panel -->
             <div class="detail-panel" id="detail-panel">
                 <!-- Content injected dynamically via JavaScript based on selected card -->
             </div>
@@ -569,7 +550,7 @@
     </main>
 
     <script>
-        // Tour extended information dataset for the interactive detail panel
+        // Tour extended information dataset with corresponding GetYourGuide Tour IDs
         const tourData = {
             "tour-1": {
                 title: "Scottish Highlands tour and whisky tasting",
@@ -583,7 +564,7 @@
                     "Traditional single malt distillery tour and guided tasting",
                     "Comfortable coach transit with local expert commentary"
                 ],
-                link: "https://gyg.me/sfqTcohW"
+                gygTourId: "sfqTcohW" // Note: Replace with exact GYG numeric tour ID if using the availability frame widget (e.g., "123456")
             },
             "tour-2": {
                 title: "Finisterre, Muxía and Costa da Morte",
@@ -597,7 +578,7 @@
                     "Scenic stops at deep rias, cascading waterfalls, and local coastal villages",
                     "Expert local guiding with comfortable air-conditioned transport"
                 ],
-                link: "https://gyg.me/6YtkOxXI"
+                gygTourId: "6YtkOxXI"
             },
             "tour-3": {
                 title: "Mount Etna summit trekking tour",
@@ -611,7 +592,7 @@
                     "Up-close views of active summit fumaroles and craters",
                     "Safety equipment and briefing provided prior to departure"
                 ],
-                link: "https://gyg.me/irz3Z7E1"
+                gygTourId: "504814" // Etna tour ID from your sample link
             }
         };
 
@@ -625,7 +606,7 @@
         let searchQuery = '';
         let activeTourId = 'tour-1'; // Default initial selection
 
-        // Render the detail panel for a given tour ID
+        // Render the detail panel containing info and the embedded GetYourGuide availability widget
         function renderDetailPanel(tourId) {
             const tour = tourData[tourId];
             if (!tour) return;
@@ -648,9 +629,18 @@
                     </ul>
                 </div>
                 <div class="booking-section">
-                    <div class="booking-heading">Live Availability & Secure Checkout</div>
-                    <div class="booking-subtext">Book directly via our official partner channel without losing your spot or getting redirected away.</div>
-                    <a href="${tour.link}" class="btn-primary" target="_blank" rel="sponsored">Check dates & reserve seats</a>
+                    <div class="booking-heading">Select Dates & Book</div>
+                    <div class="booking-subtext">Check live availability and complete booking directly on page:</div>
+                    
+                    <!-- GetYourGuide Embedded Availability Widget -->
+                    <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame" 
+                         data-gyg-tour-id="${tour.gygTourId}" 
+                         data-gyg-locale-code="en-US" 
+                         data-gyg-currency="EUR" 
+                         data-gyg-widget="availability" 
+                         data-gyg-variant="horizontal" 
+                         data-gyg-partner-id="GVCQKUI">
+                    </div>
                 </div>
             `;
         }
