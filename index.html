@@ -1,4 +1,117 @@
-<!DOCTYPE html>
+// Tour extended information dataset with distinct GetYourGuide Tour IDs
+        const tourData = {
+            "tour-1": {
+                title: "Scottish Highlands tour and whisky tasting",
+                location: "Edinburgh, Scotland",
+                difficulty: "Moderate",
+                duration: "Full day",
+                description: "Venture north into the breathtaking Scottish Highlands on this curated small-group excursion. Traverse dramatic glens, behold mirror-like highland lochs, and experience authentic local heritage with an exclusive distillery tour and tasting session.",
+                highlights: [
+                    "Small-group guided journey from central Edinburgh",
+                    "Stop at historic Glencoe and scenic highland lookouts",
+                    "Traditional single malt distillery tour and guided tasting",
+                    "Comfortable coach transit with local expert commentary"
+                ],
+                gygTourId: "504814" // Replace with actual Scottish Highlands GetYourGuide Tour ID
+            },
+            "tour-2": {
+                title: "Finisterre, Muxía and Costa da Morte",
+                location: "Santiago de Compostela, Spain",
+                difficulty: "Easy",
+                duration: "7-stop tour",
+                description: "Journey past the traditional end of the Camino de Santiago to the edge of the world. Explore the dramatic cliffs, crashing Atlantic breakers, and hidden fishing hamlets along Galicia's legendary Coast of Death.",
+                highlights: [
+                    "Visit the iconic Cape Finisterre lighthouse and zero-kilometer stone",
+                    "Explore the cliffside sanctuary of Muxía",
+                    "Scenic stops at deep rias, cascading waterfalls, and local coastal villages",
+                    "Expert local guiding with comfortable air-conditioned transport"
+                ],
+                gygTourId: "751234" // Replace with actual Finisterre GetYourGuide Tour ID
+            },
+            "tour-3": {
+                title: "Mount Etna summit trekking tour",
+                location: "Piano Provenzana, Sicily, Italy",
+                difficulty: "Hard",
+                duration: "5-6 hours",
+                description: "Conquer Europe's highest and most active volcano alongside a certified alpine volcanological guide. Trek across ancient lava flows, explore smoking summit craters, and take in sweeping panoramas across the Ionian coast.",
+                highlights: [
+                    "Ascent with professional mountain and vulcanology guides",
+                    "Traverse high-altitude volcanic ash fields and cinder cones",
+                    "Up-close views of active summit fumaroles and craters",
+                    "Safety equipment and briefing provided prior to departure"
+                ],
+                gygTourId: "412890" // Replace with actual Mount Etna GetYourGuide Tour ID
+            }
+        };
+
+        const searchInput = document.getElementById('search-input');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const tourCards = document.querySelectorAll('.tour-card');
+        const noResults = document.getElementById('no-results');
+        const detailPanel = document.getElementById('detail-panel');
+
+        let currentFilter = 'all';
+        let searchQuery = '';
+        let activeTourId = 'tour-1';
+
+        // Render detail panel and dynamically load the corresponding GYG widget
+        function renderDetailPanel(tourId) {
+            const tour = tourData[tourId];
+            if (!tour) return;
+
+            detailPanel.innerHTML = `
+                <div class="detail-panel-header">
+                    <div>
+                        <h2 class="detail-panel-title">${tour.title}</h2>
+                        <div class="detail-location">${tour.location}</div>
+                    </div>
+                </div>
+                <div class="detail-meta-row">
+                    <span><strong>Difficulty:</strong> ${tour.difficulty}</span>
+                    <span><strong>Duration:</strong> ${tour.duration}</span>
+                </div>
+                <div class="detail-body">
+                    <p>${tour.description}</p>
+                    <ul class="detail-highlights">
+                        ${tour.highlights.map(h => `<li>${h}</li>`).join('')}
+                    </ul>
+                </div>
+                <div class="booking-section">
+                    <div class="booking-heading">Select Dates & Book</div>
+                    <div class="booking-subtext">Check live availability and complete booking directly on page:</div>
+                    
+                    <!-- Dynamic GetYourGuide Availability Widget Container -->
+                    <div id="gyg-widget-container">
+                        <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame" 
+                             data-gyg-tour-id="${tour.gygTourId}" 
+                             data-gyg-locale-code="en-US" 
+                             data-gyg-currency="EUR" 
+                             data-gyg-widget="availability" 
+                             data-gyg-variant="horizontal" 
+                             data-gyg-partner-id="GVCQKUI">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Tell the GetYourGuide loader script to re-scan the DOM for newly injected widgets
+            if (window.GYG && typeof window.GYG.init === 'function') {
+                window.GYG.init();
+            } else {
+                // Fallback: reload the loader script snippet dynamically if GYG object isn't globally exposed yet
+                const oldScript = document.getElementById('dynamic-gyg-loader');
+                if (oldScript) oldScript.remove();
+
+                const script = document.createElement('script');
+                script.id = 'dynamic-gyg-loader';
+                script.src = 'https://widget.getyourguide.com/dist/loader.js';
+                script.async = true;
+                document.body.appendChild(script);
+            }
+        }
+
+        // Initialize default panel view
+        renderDetailPanel(activeTourId);<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
