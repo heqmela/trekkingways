@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrekkingWays | Curated Outdoor Trails & Guided Treks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #1b4332;
+      --primary-hover: #2d6a4f;
+      --accent: #d8f3dc;
+      --text: #2b2b2b;
+      --text-muted: #6c757d;
+      --bg: #f8f9fa;
+      --card-bg: #ffffff;
+      --border: #e9ecef;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.5; }
+
+    /* Header & Nav */
+    header { background-color: var(--primary); color: white; padding: 2rem 1rem 3rem; text-align: center; }
+    .brand { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.5rem; }
+    .tagline { font-size: 1rem; color: var(--accent); max-width: 600px; margin: 0 auto; }
+
+    /* Search & Filters Container */
+    .controls-container { max-width: 1100px; margin: -1.5rem auto 2rem; padding: 0 1rem; }
+    .search-box { background: var(--card-bg); padding: 0.75rem 1rem; border-radius: var(--radius); box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; gap: 10px; }
+    .search-input { width: 100%; border: none; outline: none; font-size: 1rem; font-family: inherit; }
+    
+    .filter-pills { display: flex; gap: 8px; margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
+    .pill { background: white; border: 1px solid var(--border); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.875rem; cursor: pointer; font-weight: 500; transition: all 0.2s; }
+    .pill.active, .pill:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+    /* Main Grid */
+    main { max-width: 1100px; margin: 0 auto; padding: 0 1rem 4rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+
+    /* Cards */
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-4px); }
+    .card-img { width: 100%; height: 180px; object-fit: cover; background-color: #ddd; }
+    .card-body { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
+    
+    .card-meta { display: flex; gap: 8px; margin-bottom: 0.5rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    .badge { padding: 2px 8px; border-radius: 4px; }
+    .badge-easy { background: #e8f5e9; color: #2e7d32; }
+    .badge-mod { background: #fff3e0; color: #ef6c00; }
+    .badge-hard { background: #ffebee; color: #c62828; }
+    .duration { background: #f1f3f5; color: var(--text-muted); }
+
+    .card-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .card-region { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .card-desc { font-size: 0.9rem; color: #4a5568; margin-bottom: 1.25rem; flex-grow: 1; }
+
+    /* GetYourGuide Widget Area / CTA */
+    .gyg-widget-area { margin-top: auto; padding-top: 1rem; border-top: 1px dashed var(--border); }
+    .cta-btn { display: block; width: 100%; text-align: center; background: var(--primary); color: white; text-decoration: none; padding: 0.6rem; border-radius: 6px; font-weight: 600; transition: background 0.2s; }
+    .cta-btn:hover { background: var(--primary-hover); }
+
+    footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">TrekkingWays</div>
+    <div class="tagline">Find & book hand-picked day walks, coastal paths, and long-distance treks.</div>
+  </header>
+
+  <div class="controls-container">
+    <div class="search-box">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search routes by destination or keyword...">
+    </div>
+    <div class="filter-pills">
+      <button class="pill active" onclick="filterCategory('all')">All Routes</button>
+      <button class="pill" onclick="filterCategory('coastal')">Coastal Walks</button>
+      <button class="pill" onclick="filterCategory('day')">Day Hikes</button>
+      <button class="pill" onclick="filterCategory('multiday')">Multi-Day Treks</button>
+    </div>
+  </div>
+
+  <main>
+    <div class="grid" id="trailGrid">
+      
+      <!-- Card 1 -->
+      <article class="card" data-category="coastal">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Coastal Trail" class="card-img">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-easy">Easy</span>
+            <span class="badge duration">3.5 Hours</span>
+          </div>
+          <h2 class="card-title">Dingli Cliffs Coastal Walk</h2>
+          <div class="card-region">Malta • Mediterranean</div>
+          <p class="card-desc">Panoramic Mediterranean views along high limestone cliffs, ending at sunset near Filfla island.</p>
+          <div class="gyg-widget-area">
+            <a href="#" class="cta-btn" target="_blank" rel="noopener">Check Tour Availability</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card" data-category="multiday">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Mountain Trek" class="card-img">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-hard">Hard</span>
+            <span class="badge duration">7 Days</span>
+          </div>
+          <h2 class="card-title">West Highland Way Highlights</h2>
+          <div class="card-region">Scottish Highlands • UK</div>
+          <p class="card-desc">Iconic Scottish long-distance path passing lochs, glens, and rugged mountain passes.</p>
+          <div class="gyg-widget-area">
+            <a href="#" class="cta-btn" target="_blank" rel="noopener">View Guided Trek Options</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card" data-category="day">
+        <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" alt="Valley Hike" class="card-img">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="badge badge-mod">Moderate</span>
+            <span class="badge duration">5 Hours</span>
+          </div>
+          <h2 class="card-title">San Fruttuoso & Portofino Trail</h2>
+          <div class="card-region">Liguria • Italy</div>
+          <p class="card-desc">Scenic coastal forest path connecting hidden abbey coves with colorful fishing villages.</p>
+          <div class="gyg-widget-area">
+            <a href="#" class="cta-btn" target="_blank" rel="noopener">Book Local Experience</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TrekkingWays. All rights reserved. Affiliate partner of GetYourGuide.</p>
+  </footer>
+
+  <script>
+    // Simple filter logic
+    function filterCategory(cat) {
+      const cards = document.querySelectorAll('.card');
+      const pills = document.querySelectorAll('.pill');
+
+      pills.forEach(p => p.classList.remove('active'));
+      event.target.classList.add('active');
+
+      cards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Live search filter
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase();
+      const cards = document.querySelectorAll('.card');
+
+      cards.forEach(card => {
+        const title = card.querySelector('.card-title').innerText.toLowerCase();
+        const region = card.querySelector('.card-region').innerText.toLowerCase();
+        if (title.includes(query) || region.includes(query)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
