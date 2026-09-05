@@ -185,12 +185,19 @@
             border-color: var(--brass);
         }
 
-        /* ---------- Tour list (compact grid) ---------- */
+        /* ---------- Tour list + booking sidebar layout ---------- */
+
+        .content-layout {
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 2rem;
+            align-items: start;
+        }
 
         .tours-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+            gap: 1.25rem;
         }
 
         .tour-card {
@@ -351,14 +358,16 @@
         @media (max-width: 720px) {
             header { padding: 1.75rem 1.25rem 2.25rem 1.25rem; }
             h1 { font-size: 1.75rem; }
+            .content-layout { grid-template-columns: 1fr; }
             .tours-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .booking-panel { position: static; max-height: none; }
         }
 
         @media (max-width: 480px) {
             .tours-grid { grid-template-columns: 1fr; }
         }
 
-        /* ---------- Booking panel ---------- */
+        /* ---------- Booking sidebar panel ---------- */
 
         .btn-fallback {
             display: block;
@@ -375,33 +384,40 @@
         }
 
         .booking-panel {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--line);
+            position: sticky;
+            top: 1.5rem;
+            max-height: calc(100vh - 3rem);
+            overflow-y: auto;
+            background-color: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            padding: 1.35rem;
         }
 
         .detail-panel-title {
             font-family: var(--font-display);
-            font-size: 1.6rem;
+            font-size: 1.25rem;
             font-weight: 500;
             color: var(--ink);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.25rem;
+            line-height: 1.25;
         }
 
         .detail-location {
-            font-size: 0.9rem;
+            font-size: 0.82rem;
             color: var(--brass-deep);
             font-weight: 500;
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
         }
 
         .detail-meta-row {
             display: flex;
-            gap: 1.5rem;
-            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 0.4rem 1rem;
+            font-size: 0.78rem;
             color: var(--ink-soft);
-            margin-bottom: 1.25rem;
-            padding-bottom: 1.25rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
             border-bottom: 1px solid var(--line);
         }
 
@@ -411,24 +427,22 @@
         }
 
         .detail-body p {
-            font-size: 0.98rem;
+            font-size: 0.85rem;
             color: var(--ink-soft);
-            max-width: 68ch;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
         }
 
         .detail-highlights {
             list-style: none;
-            max-width: 60ch;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .detail-highlights li {
             position: relative;
-            padding-left: 1.2rem;
-            font-size: 0.92rem;
+            padding-left: 1.1rem;
+            font-size: 0.8rem;
             color: var(--ink-soft);
-            margin-bottom: 0.55rem;
+            margin-bottom: 0.45rem;
         }
 
         .detail-highlights li::before {
@@ -439,27 +453,29 @@
         }
 
         .booking-section {
-            background-color: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 4px;
-            padding: 1.5rem;
+            border-top: 1px solid var(--line);
+            padding-top: 1.25rem;
         }
 
         .booking-heading {
             font-family: var(--font-display);
-            font-size: 1.15rem;
+            font-size: 1.02rem;
             font-weight: 500;
             margin-bottom: 0.3rem;
         }
 
         .booking-subtext {
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             color: var(--ink-soft);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .booking-subtext a {
+            color: var(--pine);
         }
 
         #gyg-widget-container {
-            min-height: 90px;
+            min-height: 80px;
         }
     </style>
 </head>
@@ -488,7 +504,9 @@
             </div>
         </div>
 
-        <div class="tours-grid" id="tours-grid">
+        <div class="content-layout">
+            <div class="tours-column">
+                <div class="tours-grid" id="tours-grid">
 
             <!-- Tour 1: Scottish Highlands -->
             <div class="tour-card" data-tour-id="tour-1" data-category="day-hikes" data-keywords="scotland highlands whisky tasting edinburgh glens lochs distillery">
@@ -554,22 +572,20 @@
 
         </div>
 
-        <div class="no-results" id="no-results">
-            <p>No matching routes found. Try another destination or keyword.</p>
-        </div>
+                <div class="no-results" id="no-results">
+                    <p>No matching routes found. Try another destination or keyword.</p>
+                </div>
+            </div>
 
-        <section class="booking-panel" id="booking-panel">
-            <div id="detail-panel"></div>
-        </section>
+            <aside class="booking-panel" id="booking-panel">
+                <div id="detail-panel"></div>
+            </aside>
+        </div>
     </main>
 
     <script>
-        // NOTE: gygTourId values below are PLACEHOLDERS carried over from the
-        // snippet you pasted in — they are not real GetYourGuide activity IDs,
-        // so the widget will not load correctly until you replace them.
-        // To find the real ID: open each gyg.me link, look at the final
-        // redirected URL on getyourguide.com, and copy the number that
-        // appears after "-t" near the end of the URL (e.g. "...-t123456/").
+        // NOTE: all three gygTourId values below are CONFIRMED against the
+        // actual GetYourGuide listing URLs for these tours.
         const tourData = {
             "tour-1": {
                 title: "Scottish Highlands tour and whisky tasting",
@@ -583,7 +599,7 @@
                     "Traditional single malt distillery tour and guided tasting",
                     "Comfortable coach transit with local expert commentary"
                 ],
-                gygTourId: "504814", // PLACEHOLDER — replace with real Scottish Highlands tour ID
+                gygTourId: "3257", // confirmed
                 externalUrl: "https://gyg.me/sfqTcohW"
             },
             "tour-2": {
@@ -598,7 +614,7 @@
                     "Scenic stops at deep rias, cascading waterfalls, and local coastal villages",
                     "Expert local guiding with comfortable air-conditioned transport"
                 ],
-                gygTourId: "751234", // PLACEHOLDER — replace with real Finisterre tour ID
+                gygTourId: "254852", // confirmed
                 externalUrl: "https://gyg.me/6YtkOxXI"
             },
             "tour-3": {
@@ -613,7 +629,7 @@
                     "Up-close views of active summit fumaroles and craters",
                     "Safety equipment and briefing provided prior to departure"
                 ],
-                gygTourId: "412890", // PLACEHOLDER — replace with real Mount Etna tour ID
+                gygTourId: "504814", // confirmed — matches this exact tour title on GetYourGuide
                 externalUrl: "https://gyg.me/irz3Z7E1"
             }
         };
