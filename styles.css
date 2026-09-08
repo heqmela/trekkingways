@@ -30,44 +30,83 @@ body {
 
 a { color: inherit; }
 
-/* ---------- Top nav ---------- */
+/* ---------- Page menu: nav + filters, sits under the banner ---------- */
 
-.site-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    background-color: var(--paper);
+.page-menu {
+    background-color: var(--paper-deep);
     border-bottom: 1px solid var(--line);
 }
 
-.site-nav-brand {
+.page-menu-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0.85rem 1.5rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+}
+
+.page-menu-brand {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     text-decoration: none;
     color: var(--pine);
+    margin-right: auto;
 }
 
-.site-nav-links {
+.nav-pills, .filter-pills {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
-.site-nav-link {
-    font-size: 0.85rem;
-    font-weight: 500;
+.nav-pill {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 600;
     text-decoration: none;
     color: var(--ink-soft);
-    padding-bottom: 0.15rem;
-    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    border: 1px solid transparent;
+    transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.site-nav-link:hover { color: var(--pine); }
+.nav-pill:hover { background-color: rgba(31,58,48,0.08); color: var(--pine); }
 
-.site-nav-link.is-current {
-    color: var(--brass-deep);
+.nav-pill.is-current {
+    background-color: var(--pine);
+    color: #f4f7f1;
+}
+
+.filter-pills-label {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    margin-right: 0.15rem;
+}
+
+.filter-pill {
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.filter-pill:hover { border-color: var(--line-strong); color: var(--pine); }
+
+.filter-pill.active {
+    background-color: var(--brass);
     border-color: var(--brass);
+    color: #fffdf8;
 }
 
 /* ---------- Header ---------- */
@@ -161,47 +200,9 @@ header p.lede {
     padding: 0 1.5rem;
 }
 
-.filter-row {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    border-bottom: 1px solid var(--line);
-    margin: 1.5rem 0 1.75rem 0;
-}
-
-.filter-row-label {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 0.98rem;
-    color: var(--ink-soft);
-    padding-bottom: 0.7rem;
-}
-
-.filter-buttons { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-
-.filter-btn {
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    font-family: var(--font-body);
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--ink-soft);
-    cursor: pointer;
-    padding: 0 0 0.7rem 0;
-    transition: color 0.15s ease, border-color 0.15s ease;
-}
-
-.filter-btn:hover { color: var(--pine); }
-
-.filter-btn.active {
-    color: var(--brass-deep);
-    border-color: var(--brass);
-}
-
 /* ---------- Tour grid ---------- */
+
+.tours-grid { margin-top: 1.75rem; }
 
 .tours-grid {
     display: grid;

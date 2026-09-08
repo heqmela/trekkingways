@@ -23,14 +23,6 @@
 </head>
 <body>
 
-    <nav class="site-nav">
-        <a href="index.html" class="site-nav-brand">TrekkingWays</a>
-        <div class="site-nav-links">
-            <a href="index.html" class="site-nav-link is-current">Routes</a>
-            <a href="guide.html" class="site-nav-link">Trail Prep Guide</a>
-        </div>
-    </nav>
-
     <header>
         <div class="header-content">
             <p class="header-eyebrow">Guided routes, chosen by trail</p>
@@ -43,17 +35,24 @@
         </div>
     </header>
 
-    <main class="main-container">
-        <div class="filter-row">
-            <span class="filter-row-label">Browse routes</span>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All routes</button>
-                <button class="filter-btn" data-filter="coastal">Coastal walks</button>
-                <button class="filter-btn" data-filter="day-hikes">Day hikes</button>
-                <button class="filter-btn" data-filter="summit">Summit and treks</button>
+    <nav class="page-menu">
+        <div class="page-menu-inner">
+            <a href="index.html" class="page-menu-brand">TrekkingWays</a>
+            <div class="nav-pills">
+                <a href="index.html" class="nav-pill is-current">Routes</a>
+                <a href="guide.html" class="nav-pill">Trail Prep Guide</a>
+            </div>
+            <div class="filter-pills" id="filter-pills">
+                <span class="filter-pills-label">Filter:</span>
+                <button class="filter-pill active" data-filter="all">All routes</button>
+                <button class="filter-pill" data-filter="coastal">Coastal walks</button>
+                <button class="filter-pill" data-filter="day-hikes">Day hikes</button>
+                <button class="filter-pill" data-filter="summit">Summit and treks</button>
             </div>
         </div>
+    </nav>
 
+    <main class="main-container">
         <div class="tours-grid" id="tours-grid">
 
             <!-- Tour 1: Scottish Highlands -->
@@ -137,7 +136,7 @@
 
     <script>
         const searchInput = document.getElementById('search-input');
-        const filterBtns = document.querySelectorAll('.filter-btn');
+        const filterBtns = document.querySelectorAll('.filter-pill');
         const tourCards = document.querySelectorAll('.tour-card');
         const noResults = document.getElementById('no-results');
 
