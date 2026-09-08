@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrekkingWays — Curated Outdoor Experiences & Treks</title>
+    <meta name="description" content="A hand-picked set of coastal paths, day walks and summit treks, each led by a local guide. Browse routes and book directly.">
+
+    <!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="site-nav">
+        <a href="index.html" class="site-nav-brand">TrekkingWays</a>
+        <div class="site-nav-links">
+            <a href="index.html" class="site-nav-link is-current">Routes</a>
+            <a href="guide.html" class="site-nav-link">Trail Prep Guide</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <p class="header-eyebrow">Guided routes, chosen by trail</p>
+            <h1>Find your next day on the trail</h1>
+            <p class="lede">A small, hand-picked set of coastal paths, day walks, and summit treks — each led by a local guide.</p>
+            <div class="search-container">
+                <label class="search-label" for="search-input">Search by destination or keyword</label>
+                <input type="text" id="search-input" placeholder="Scotland, Etna, Finisterre..." autocomplete="off">
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="filter-row">
+            <span class="filter-row-label">Browse routes</span>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All routes</button>
+                <button class="filter-btn" data-filter="coastal">Coastal walks</button>
+                <button class="filter-btn" data-filter="day-hikes">Day hikes</button>
+                <button class="filter-btn" data-filter="summit">Summit and treks</button>
+            </div>
+        </div>
+
+        <div class="tours-grid" id="tours-grid">
+
+            <!-- Tour 1: Scottish Highlands -->
+            <a href="detail.html?tour=tour-1" class="tour-card" data-tour-id="tour-1" data-category="day-hikes" data-keywords="scotland highlands whisky tasting edinburgh glens lochs distillery">
+                <div class="tour-image-wrapper">
+                    <span class="tour-flag">Most popular</span>
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Scottish Highlands landscape" loading="lazy">
+                </div>
+                <div class="tour-content">
+                    <div class="tour-meta">
+                        <span class="badge badge-difficulty">Moderate</span>
+                        <span class="badge badge-duration">Full day</span>
+                    </div>
+                    <h3 class="tour-title">Scottish Highlands tour and whisky tasting</h3>
+                    <div class="tour-location">Edinburgh, Scotland</div>
+                    <p class="tour-description">Experience iconic Scottish glens, pristine highland lochs, and a local distillery tasting on a guided small-group day excursion from Edinburgh.</p>
+                    <div class="tour-action">
+                        <span class="btn">See trek details</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Tour 2: Finisterre -->
+            <a href="detail.html?tour=tour-2" class="tour-card" data-tour-id="tour-2" data-category="coastal" data-keywords="finisterre muxia costa da morte galicia santiago camino lighthouse shell">
+                <div class="tour-image-wrapper">
+                    <img src="image_5f9729.jpg" alt="Finisterre lighthouse and Camino shell marker" loading="lazy">
+                </div>
+                <div class="tour-content">
+                    <div class="tour-meta">
+                        <span class="badge badge-difficulty">Easy</span>
+                        <span class="badge badge-duration">7-stop tour</span>
+                    </div>
+                    <h3 class="tour-title">Finisterre, Muxía and Costa da Morte</h3>
+                    <div class="tour-location">Santiago de Compostela, Spain</div>
+                    <p class="tour-description">Explore Galicia's dramatic Coast of Death, visiting the legendary Cape Finisterre, historic Muxía, and scenic coastal stops beyond the Camino path.</p>
+                    <div class="tour-action">
+                        <span class="btn">See trek details</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Tour 3: Mount Etna -->
+            <a href="detail.html?tour=tour-3" class="tour-card" data-tour-id="tour-3" data-category="summit" data-keywords="mount etna summit trekking piano provenzana sicily volcano craters lava">
+                <div class="tour-image-wrapper">
+                    <span class="tour-flag tour-flag-alt">Top rated</span>
+                    <img src="image_5f9787.jpg" alt="Mount Etna active volcanic crater landscape" loading="lazy">
+                </div>
+                <div class="tour-content">
+                    <div class="tour-meta">
+                        <span class="badge badge-difficulty">Hard</span>
+                        <span class="badge badge-duration">5-6 hours</span>
+                    </div>
+                    <h3 class="tour-title">Mount Etna summit trekking tour</h3>
+                    <div class="tour-location">Piano Provenzana, Sicily, Italy</div>
+                    <p class="tour-description">Ascend Europe's highest active volcano alongside an alpine guide. Traverse volcanic craters, ancient lava fields, and high-altitude lunar landscapes.</p>
+                    <div class="tour-action">
+                        <span class="btn">See trek details</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="no-results" id="no-results">
+            <p>No matching routes found. Try another destination or keyword.</p>
+        </div>
+
+        <section class="guide-teaser">
+            <div class="guide-teaser-text">
+                <p class="header-eyebrow">Before you go</p>
+                <h2>Heading out on a multi-day trek?</h2>
+                <p>Our Trail Prep Guide covers what to expect from daily fatigue, how to train beforehand, and how to keep your feet in good shape from day one to the last mile.</p>
+            </div>
+            <a href="guide.html" class="btn btn-brass">Read the Trail Prep Guide</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>TrekkingWays curates guided treks from trusted local operators. Some links on this site are affiliate links — if you book through them, we may earn a small commission at no extra cost to you.</p>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const tourCards = document.querySelectorAll('.tour-card');
+        const noResults = document.getElementById('no-results');
+
+        let currentFilter = 'all';
+        let searchQuery = '';
+
+        function filterTours() {
+            let visibleCount = 0;
+
+            tourCards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                const keywords = card.getAttribute('data-keywords');
+                const title = card.querySelector('.tour-title').textContent.toLowerCase();
+                const description = card.querySelector('.tour-description').textContent.toLowerCase();
+                const location = card.querySelector('.tour-location').textContent.toLowerCase();
+
+                const matchesCategory = (currentFilter === 'all' || category === currentFilter);
+                const matchesSearch = (
+                    searchQuery === '' ||
+                    title.includes(searchQuery) ||
+                    description.includes(searchQuery) ||
+                    location.includes(searchQuery) ||
+                    keywords.includes(searchQuery)
+                );
+
+                if (matchesCategory && matchesSearch) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.trim().toLowerCase();
+            filterTours();
+        });
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.getAttribute('data-filter');
+                filterTours();
+            });
+        });
+    </script>
+</body>
+</html>

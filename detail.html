@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Trek details — TrekkingWays</title>
+    <meta id="page-description" name="description" content="Trek details, route highlights, and live availability.">
+
+    <!-- GetYourGuide Analytics -->
+    <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="GVCQKUI"></script>
+
+    <!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="site-nav">
+        <a href="index.html" class="site-nav-brand">TrekkingWays</a>
+        <div class="site-nav-links">
+            <a href="index.html" class="site-nav-link">Routes</a>
+            <a href="guide.html" class="site-nav-link">Trail Prep Guide</a>
+        </div>
+    </nav>
+
+    <div class="detail-hero">
+        <img id="hero-image" src="" alt="">
+    </div>
+
+    <p class="breadcrumb"><a href="index.html">All routes</a> / <span id="breadcrumb-title"></span></p>
+
+    <main class="detail-layout">
+        <div class="detail-main">
+            <div class="detail-location" id="detail-location"></div>
+            <h1 id="detail-title"></h1>
+
+            <div class="detail-meta-row">
+                <span><strong>Difficulty</strong><span id="detail-difficulty"></span></span>
+                <span><strong>Duration</strong><span id="detail-duration"></span></span>
+                <span><strong>Location</strong><span id="detail-location-2"></span></span>
+            </div>
+
+            <div class="detail-body">
+                <p id="detail-description"></p>
+            </div>
+
+            <h2 class="detail-section-heading">Route highlights</h2>
+            <ul class="detail-highlights" id="detail-highlights"></ul>
+
+            <h2 class="detail-section-heading">Good to know before you book</h2>
+            <ul class="detail-highlights" id="detail-notes"></ul>
+
+            <div class="gear-placeholder" id="gear-placeholder">
+                Recommended gear for this trek — add affiliate product links here (boots, poles, daypack, layers).
+            </div>
+        </div>
+
+        <aside class="booking-panel">
+            <div class="booking-heading">Select dates and book</div>
+            <div class="booking-subtext">Check live availability and book directly below, or <a id="external-link" href="#" target="_blank" rel="sponsored">open the full listing on GetYourGuide ↗</a>.</div>
+            <div id="gyg-widget-container"></div>
+            <p class="affiliate-note">Booking through this page supports TrekkingWays at no extra cost to you.</p>
+        </aside>
+    </main>
+
+    <footer class="site-footer">
+        <p>TrekkingWays curates guided treks from trusted local operators. Some links on this site are affiliate links — if you book through them, we may earn a small commission at no extra cost to you.</p>
+    </footer>
+
+    <script>
+        // Same data used on the front page — keep this object in sync with index.html,
+        // or move it to a shared tour-data.js file once the catalog grows.
+        const tourData = {
+            "tour-1": {
+                title: "Scottish Highlands tour and whisky tasting",
+                location: "Edinburgh, Scotland",
+                difficulty: "Moderate",
+                duration: "Full day",
+                heroImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80",
+                description: "Venture north into the breathtaking Scottish Highlands on this curated small-group excursion. Traverse dramatic glens, behold mirror-like highland lochs, and experience authentic local heritage with an exclusive distillery tour and tasting session.",
+                highlights: [
+                    "Small-group guided journey from central Edinburgh",
+                    "Stop at historic Glencoe and scenic highland lookouts",
+                    "Traditional single malt distillery tour and guided tasting",
+                    "Comfortable coach transit with local expert commentary"
+                ],
+                notes: [
+                    "Mostly coach-based with short walks — comfortable footwear is enough, no technical hiking gear needed",
+                    "Tastings include alcohol; a soft-drink alternative is available on request",
+                    "Runs rain or shine — bring a warm layer for outdoor stops"
+                ],
+                gygTourId: "3257",
+                externalUrl: "https://gyg.me/sfqTcohW"
+            },
+            "tour-2": {
+                title: "Finisterre, Muxía and Costa da Morte",
+                location: "Santiago de Compostela, Spain",
+                difficulty: "Easy",
+                duration: "7-stop tour",
+                heroImage: "image_5f9729.jpg",
+                description: "Journey past the traditional end of the Camino de Santiago to the edge of the world. Explore the dramatic cliffs, crashing Atlantic breakers, and hidden fishing hamlets along Galicia's legendary Coast of Death.",
+                highlights: [
+                    "Visit the iconic Cape Finisterre lighthouse and zero-kilometer stone",
+                    "Explore the cliffside sanctuary of Muxía",
+                    "Scenic stops at deep rias, cascading waterfalls, and local coastal villages",
+                    "Expert local guiding with comfortable air-conditioned transport"
+                ],
+                notes: [
+                    "Easy walking pace at each stop — suitable for most fitness levels",
+                    "Coastal weather can be windy; a light waterproof jacket is worth packing",
+                    "A good add-on if you're already walking the Camino and want to see Finisterre without a multi-day extension"
+                ],
+                gygTourId: "254852",
+                externalUrl: "https://gyg.me/6YtkOxXI"
+            },
+            "tour-3": {
+                title: "Mount Etna summit trekking tour",
+                location: "Piano Provenzana, Sicily, Italy",
+                difficulty: "Hard",
+                duration: "5-6 hours",
+                heroImage: "image_5f9787.jpg",
+                description: "Conquer Europe's highest and most active volcano alongside a certified alpine volcanological guide. Trek across ancient lava flows, explore smoking summit craters, and take in sweeping panoramas across the Ionian coast.",
+                highlights: [
+                    "Ascent with professional mountain and vulcanology guides",
+                    "Traverse high-altitude volcanic ash fields and cinder cones",
+                    "Up-close views of active summit fumaroles and craters",
+                    "Safety equipment and briefing provided prior to departure"
+                ],
+                notes: [
+                    "This is a genuine trek — good fitness, sturdy hiking boots, and layers are essential",
+                    "Altitude and exposed terrain mean weather can shift quickly; check our Trail Prep Guide before you go",
+                    "Not recommended for anyone with respiratory or mobility conditions"
+                ],
+                gygTourId: "504814",
+                externalUrl: "https://gyg.me/irz3Z7E1"
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const tourId = params.get('tour');
+        const tour = tourData[tourId];
+
+        if (!tour) {
+            document.querySelector('main').innerHTML = '<p style="padding:3rem 0;">We couldn\'t find that trek. <a href="index.html">Back to all routes</a>.</p>';
+        } else {
+            document.getElementById('page-title').textContent = tour.title + ' — TrekkingWays';
+            document.getElementById('page-description').setAttribute('content', tour.description.slice(0, 155));
+            document.getElementById('hero-image').src = tour.heroImage;
+            document.getElementById('hero-image').alt = tour.title;
+            document.getElementById('breadcrumb-title').textContent = tour.title;
+            document.getElementById('detail-location').textContent = tour.location;
+            document.getElementById('detail-location-2').textContent = tour.location;
+            document.getElementById('detail-title').textContent = tour.title;
+            document.getElementById('detail-difficulty').textContent = tour.difficulty;
+            document.getElementById('detail-duration').textContent = tour.duration;
+            document.getElementById('detail-description').textContent = tour.description;
+            document.getElementById('external-link').href = tour.externalUrl;
+
+            document.getElementById('detail-highlights').innerHTML =
+                tour.highlights.map(h => `<li>${h}</li>`).join('');
+            document.getElementById('detail-notes').innerHTML =
+                tour.notes.map(n => `<li>${n}</li>`).join('');
+
+            document.getElementById('gyg-widget-container').innerHTML = `
+                <div data-gyg-href="https://widget.getyourguide.com/default/availability.frame"
+                     data-gyg-tour-id="${tour.gygTourId}"
+                     data-gyg-locale-code="en-US"
+                     data-gyg-currency="EUR"
+                     data-gyg-widget="availability"
+                     data-gyg-variant="vertical"
+                     data-gyg-partner-id="GVCQKUI">
+                </div>`;
+
+            const script = document.createElement('script');
+            script.src = 'https://widget.getyourguide.com/dist/loader.js';
+            script.async = true;
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+</html>
