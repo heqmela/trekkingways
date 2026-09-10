@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /detail.html
+Disallow: /index(preredesign).html
+Disallow: /indexprotoold.html
+
+Sitemap: https://trekkingways.com/sitemap.xml

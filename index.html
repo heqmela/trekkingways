@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrekkingWays — Curated Outdoor Experiences & Treks</title>
     <meta name="description" content="A hand-picked set of coastal paths, day walks and summit treks, each led by a local guide. Browse routes and book directly.">
+    <link rel="canonical" href="https://trekkingways.com/">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 
     <!-- Google Analytics (GA4) - trekkingways.com property -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSWBG74Z71"></script>
@@ -20,6 +27,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured data: site + list of treks -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "TrekkingWays",
+        "url": "https://trekkingways.com/",
+        "description": "A hand-picked set of coastal paths, day walks and summit treks, each led by a local guide."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "url": "https://trekkingways.com/scottish-highlands-whisky-tasting.html",
+                "name": "Scottish Highlands tour and whisky tasting"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "url": "https://trekkingways.com/finisterre-muxia-costa-da-morte.html",
+                "name": "Finisterre, Muxía and Costa da Morte"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "url": "https://trekkingways.com/mount-etna-summit-trek.html",
+                "name": "Mount Etna summit trekking tour"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
 
@@ -53,10 +97,13 @@
     </nav>
 
     <main class="main-container">
+
+        <p class="intro-copy">Every route below is run by a local, vetted guide rather than a large coach operator, and every listing links straight to live availability so you can check dates and book without hunting through a separate site. Whether you want an easy coastal walk, a full-day highland excursion, or a genuine summit trek, start by browsing the three routes here — or read the <a href="guide.html">Trail Prep Guide</a> first if you're planning your first multi-day trip.</p>
+
         <div class="tours-grid" id="tours-grid">
 
             <!-- Tour 1: Scottish Highlands -->
-            <a href="detail.html?tour=tour-1" class="tour-card" data-tour-id="tour-1" data-category="day-hikes" data-keywords="scotland highlands whisky tasting edinburgh glens lochs distillery">
+            <a href="scottish-highlands-whisky-tasting.html" class="tour-card" data-tour-id="tour-1" data-category="day-hikes" data-keywords="scotland highlands whisky tasting edinburgh glens lochs distillery">
                 <div class="tour-image-wrapper">
                     <span class="tour-flag">Most popular</span>
                     <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Scottish Highlands landscape" loading="lazy">
@@ -66,7 +113,7 @@
                         <span class="badge badge-difficulty">Moderate</span>
                         <span class="badge badge-duration">Full day</span>
                     </div>
-                    <h3 class="tour-title">Scottish Highlands tour and whisky tasting</h3>
+                    <h2 class="tour-title">Scottish Highlands tour and whisky tasting</h2>
                     <div class="tour-location">Edinburgh, Scotland</div>
                     <p class="tour-description">Experience iconic Scottish glens, pristine highland lochs, and a local distillery tasting on a guided small-group day excursion from Edinburgh.</p>
                     <div class="tour-action">
@@ -76,7 +123,7 @@
             </a>
 
             <!-- Tour 2: Finisterre -->
-            <a href="detail.html?tour=tour-2" class="tour-card" data-tour-id="tour-2" data-category="coastal" data-keywords="finisterre muxia costa da morte galicia santiago camino lighthouse shell">
+            <a href="finisterre-muxia-costa-da-morte.html" class="tour-card" data-tour-id="tour-2" data-category="coastal" data-keywords="finisterre muxia costa da morte galicia santiago camino lighthouse shell">
                 <div class="tour-image-wrapper">
                     <img src="image_5f9729.jpg" alt="Finisterre lighthouse and Camino shell marker" loading="lazy">
                 </div>
@@ -85,7 +132,7 @@
                         <span class="badge badge-difficulty">Easy</span>
                         <span class="badge badge-duration">7-stop tour</span>
                     </div>
-                    <h3 class="tour-title">Finisterre, Muxía and Costa da Morte</h3>
+                    <h2 class="tour-title">Finisterre, Muxía and Costa da Morte</h2>
                     <div class="tour-location">Santiago de Compostela, Spain</div>
                     <p class="tour-description">Explore Galicia's dramatic Coast of Death, visiting the legendary Cape Finisterre, historic Muxía, and scenic coastal stops beyond the Camino path.</p>
                     <div class="tour-action">
@@ -95,7 +142,7 @@
             </a>
 
             <!-- Tour 3: Mount Etna -->
-            <a href="detail.html?tour=tour-3" class="tour-card" data-tour-id="tour-3" data-category="summit" data-keywords="mount etna summit trekking piano provenzana sicily volcano craters lava">
+            <a href="mount-etna-summit-trek.html" class="tour-card" data-tour-id="tour-3" data-category="summit" data-keywords="mount etna summit trekking piano provenzana sicily volcano craters lava">
                 <div class="tour-image-wrapper">
                     <span class="tour-flag tour-flag-alt">Top rated</span>
                     <img src="image_5f9787.jpg" alt="Mount Etna active volcanic crater landscape" loading="lazy">
@@ -105,7 +152,7 @@
                         <span class="badge badge-difficulty">Hard</span>
                         <span class="badge badge-duration">5-6 hours</span>
                     </div>
-                    <h3 class="tour-title">Mount Etna summit trekking tour</h3>
+                    <h2 class="tour-title">Mount Etna summit trekking tour</h2>
                     <div class="tour-location">Piano Provenzana, Sicily, Italy</div>
                     <p class="tour-description">Ascend Europe's highest active volcano alongside an alpine guide. Traverse volcanic craters, ancient lava fields, and high-altitude lunar landscapes.</p>
                     <div class="tour-action">
