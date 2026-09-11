@@ -581,6 +581,95 @@ header p.lede {
     max-width: 62ch;
 }
 
+/* ---------- Product recommendation cards (Amazon etc.) ---------- */
+
+.product-card {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0 0.5rem;
+    max-width: 62ch;
+    background-color: var(--card);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease;
+}
+
+.product-card:hover { border-color: var(--line-strong); }
+
+.product-card-image {
+    width: 72px;
+    height: 96px;
+    object-fit: cover;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    flex-shrink: 0;
+    background-color: var(--paper-deep);
+}
+
+.product-card-body { flex-grow: 1; }
+
+.product-card-title {
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+}
+
+.product-card-desc {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    margin-bottom: 0.5rem;
+}
+
+.product-card-cta {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--brass-deep);
+}
+
+.affiliate-disclosure {
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 0.5rem 0 1.4rem;
+    max-width: 62ch;
+}
+
+/* ---------- YouTube video embeds ---------- */
+
+.video-embed { margin: 1rem 0 1.75rem; max-width: 62ch; }
+
+.video-embed-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: var(--paper-deep);
+    border: 1px solid var(--line);
+}
+
+.video-embed-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-embed-caption {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    margin-top: 0.5rem;
+}
+
+.video-embed-caption a { color: var(--pine); text-decoration: underline; }
+
 @media (max-width: 780px) {
     .detail-layout, .guide-layout { grid-template-columns: 1fr; }
     .guide-nav { position: static; flex-direction: row; overflow-x: auto; padding: 1rem 0; }
