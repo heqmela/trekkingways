@@ -72,13 +72,18 @@
 </head>
 <body>
 
+    <div class="brand-bar">
+        <div class="brand-bar-inner">
+            <a href="index.html" class="brand-bar-link">TrekkingWays</a>
+        </div>
+    </div>
+
     <div class="detail-hero">
         <img src="image_5f9729.jpg" alt="Finisterre, Muxía and Costa da Morte">
     </div>
 
     <nav class="page-menu">
         <div class="page-menu-inner">
-            <a href="index.html" class="page-menu-brand">TrekkingWays</a>
             <div class="nav-pills">
                 <a href="index.html" class="nav-pill">Routes</a>
                 <a href="guide.html" class="nav-pill">Trail Prep Guide</a>
@@ -102,6 +107,49 @@
             <div class="detail-body">
                 <p>Journey past the traditional end of the Camino de Santiago to the edge of the world. Explore the dramatic cliffs, crashing Atlantic breakers, and hidden fishing hamlets along Galicia's legendary Coast of Death.</p>
             </div>
+
+            <h2 class="detail-section-heading">Trail gallery</h2>
+            <section class="trail-gallery">
+                <div class="gallery-viewport">
+                    <button class="gallery-arrow gallery-arrow-prev" aria-label="Previous photos">‹</button>
+                    <div class="gallery-track">
+                        <div class="gallery-thumb">
+                            <img src="image_5f9729.jpg" alt="Finisterre lighthouse and Camino shell marker" loading="lazy">
+                        </div>
+                        <div class="gallery-thumb">
+                            <div class="gallery-thumb-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7l1.5-2.5h5L16 7"></path><circle cx="12" cy="13.5" r="3.2"></circle></svg>
+                                <span>Cape Finisterre lighthouse</span>
+                            </div>
+                        </div>
+                        <div class="gallery-thumb">
+                            <div class="gallery-thumb-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7l1.5-2.5h5L16 7"></path><circle cx="12" cy="13.5" r="3.2"></circle></svg>
+                                <span>Muxía sanctuary</span>
+                            </div>
+                        </div>
+                        <div class="gallery-thumb">
+                            <div class="gallery-thumb-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7l1.5-2.5h5L16 7"></path><circle cx="12" cy="13.5" r="3.2"></circle></svg>
+                                <span>Coastal cliffs</span>
+                            </div>
+                        </div>
+                        <div class="gallery-thumb">
+                            <div class="gallery-thumb-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7l1.5-2.5h5L16 7"></path><circle cx="12" cy="13.5" r="3.2"></circle></svg>
+                                <span>Camino waymarker</span>
+                            </div>
+                        </div>
+                        <div class="gallery-thumb">
+                            <div class="gallery-thumb-placeholder">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7l1.5-2.5h5L16 7"></path><circle cx="12" cy="13.5" r="3.2"></circle></svg>
+                                <span>Atlantic sunset</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="gallery-arrow gallery-arrow-next" aria-label="Next photos">›</button>
+                </div>
+            </section>
 
             <h2 class="detail-section-heading">Route highlights</h2>
             <ul class="detail-highlights">
@@ -128,14 +176,17 @@
 
             <h2 class="detail-section-heading">Recommended reading</h2>
             <a class="product-card" href="https://www.amazon.co.uk/dp/B0HFZK3RJM?tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                <!-- TODO: add the real cover image via Amazon SiteStripe's "Image" or "Text + Image" link builder — don't hotlink a guessed image URL -->
+                <!-- Replace this placeholder with the real cover image from Amazon Associates SiteStripe
+                     ("Image" or "Image + Text" link type) once your Associate tag is live. -->
+                <div class="product-card-image-placeholder">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
+                </div>
                 <div class="product-card-body">
                     <div class="product-card-title">Camino Preparation Workbook</div>
                     <p class="product-card-desc">A practical planning companion if you're extending your walk to include this Finisterre–Muxía stretch.</p>
                     <div class="product-card-cta">View on Amazon ↗</div>
                 </div>
             </a>
-            <p class="affiliate-disclosure">As an Amazon Associate, TrekkingWays earns from qualifying purchases.</p>
         </div>
 
         <aside class="booking-panel">
@@ -160,5 +211,6 @@
     </footer>
 
     <script async src="https://widget.getyourguide.com/dist/loader.js"></script>
+    <script src="gallery.js" defer></script>
 </body>
 </html>

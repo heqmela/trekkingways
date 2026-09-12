@@ -67,6 +67,12 @@
 </head>
 <body>
 
+    <div class="brand-bar">
+        <div class="brand-bar-inner">
+            <a href="index.html" class="brand-bar-link">TrekkingWays</a>
+        </div>
+    </div>
+
     <header>
         <div class="header-content">
             <p class="header-eyebrow">Guided routes, chosen by trail</p>
@@ -81,17 +87,9 @@
 
     <nav class="page-menu">
         <div class="page-menu-inner">
-            <a href="index.html" class="page-menu-brand">TrekkingWays</a>
             <div class="nav-pills">
                 <a href="index.html" class="nav-pill is-current">Routes</a>
                 <a href="guide.html" class="nav-pill">Trail Prep Guide</a>
-            </div>
-            <div class="filter-pills" id="filter-pills">
-                <span class="filter-pills-label">Filter:</span>
-                <button class="filter-pill active" data-filter="all">All routes</button>
-                <button class="filter-pill" data-filter="coastal">Coastal walks</button>
-                <button class="filter-pill" data-filter="day-hikes">Day hikes</button>
-                <button class="filter-pill" data-filter="summit">Summit and treks</button>
             </div>
         </div>
     </nav>
@@ -99,6 +97,17 @@
     <main class="main-container">
 
         <p class="intro-copy">Every route below is run by a local, vetted guide rather than a large coach operator, and every listing links straight to live availability so you can check dates and book without hunting through a separate site. Whether you want an easy coastal walk, a full-day highland excursion, or a genuine summit trek, start by browsing the three routes here — or read the <a href="guide.html">Trail Prep Guide</a> first if you're planning your first multi-day trip.</p>
+
+        <div class="gallery-toolbar" id="filter-pills">
+            <div class="filter-pills">
+                <span class="filter-pills-label">Filter:</span>
+                <button class="filter-pill active" data-filter="all">All routes</button>
+                <button class="filter-pill" data-filter="coastal">Coastal walks</button>
+                <button class="filter-pill" data-filter="day-hikes">Day hikes</button>
+                <button class="filter-pill" data-filter="summit">Summit and treks</button>
+            </div>
+        </div>
+
 
         <div class="tours-grid" id="tours-grid">
 
@@ -178,7 +187,7 @@
     </main>
 
     <footer class="site-footer">
-        <p>TrekkingWays curates guided treks from trusted local operators. Some links on this site are affiliate links — if you book through them, we may earn a small commission at no extra cost to you.</p>
+        <p>TrekkingWays curates guided treks from trusted local operators. Some links on this site are affiliate links, including GetYourGuide booking links and, where noted, Amazon product links — if you book or buy through them, we may earn a small commission at no extra cost to you. As an Amazon Associate, TrekkingWays earns from qualifying purchases.</p>
     </footer>
 
     <script>

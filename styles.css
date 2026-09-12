@@ -37,6 +37,30 @@ a { color: inherit; }
     border-bottom: 1px solid var(--line);
 }
 
+/* ---------- Brand bar: site wordmark, part of the top banner on every page ---------- */
+
+.brand-bar {
+    background-color: var(--pine);
+    padding: 0.65rem 1.5rem;
+}
+
+.brand-bar-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.brand-bar-link {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.02rem;
+    text-decoration: none;
+    color: #eef2ea;
+}
+
+/* ---------- Page menu: site-page navigation only (Routes / Trail Prep Guide) ---------- */
+
 .page-menu-inner {
     max-width: 1080px;
     margin: 0 auto;
@@ -47,16 +71,7 @@ a { color: inherit; }
     gap: 0.75rem 1.5rem;
 }
 
-.page-menu-brand {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.02rem;
-    text-decoration: none;
-    color: var(--pine);
-    margin-right: auto;
-}
-
-.nav-pills, .filter-pills {
+.nav-pills {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -80,6 +95,21 @@ a { color: inherit; }
 .nav-pill.is-current {
     background-color: var(--pine);
     color: #f4f7f1;
+}
+
+/* ---------- Gallery toolbar: filters, scoped to the trail gallery on the homepage ---------- */
+
+.gallery-toolbar {
+    margin: 1.75rem 0 1.1rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.filter-pills {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .filter-pills-label {
@@ -639,6 +669,115 @@ header p.lede {
     margin: 0.5rem 0 1.4rem;
     max-width: 62ch;
 }
+
+/* ---------- Trail photo gallery ---------- */
+
+.trail-gallery { margin: 1.75rem 0; }
+
+.gallery-viewport {
+    position: relative;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 0.6rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+}
+
+.gallery-track::-webkit-scrollbar { display: none; }
+
+.gallery-thumb {
+    flex: 0 0 calc((100% - 5 * 0.6rem) / 6);
+    scroll-snap-align: start;
+}
+
+.gallery-thumb img,
+.gallery-thumb-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 4px;
+    border: 1px solid var(--line);
+}
+
+.gallery-thumb-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    background-color: var(--paper-deep);
+    border-style: dashed;
+    border-color: var(--line-strong);
+    color: var(--ink-soft);
+    font-size: 0.62rem;
+    text-align: center;
+    padding: 0.4rem;
+    line-height: 1.25;
+}
+
+.gallery-thumb-placeholder svg { width: 20px; height: 20px; opacity: 0.55; }
+
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background-color: var(--card);
+    color: var(--pine);
+    font-size: 1.05rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 1px 4px rgba(35, 38, 31, 0.12);
+    transition: background-color 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+.gallery-arrow:hover { background-color: var(--pine); color: #f4f7f1; }
+.gallery-arrow:disabled { opacity: 0.3; cursor: default; }
+.gallery-arrow:disabled:hover { background-color: var(--card); color: var(--pine); }
+.gallery-arrow-prev { left: -14px; }
+.gallery-arrow-next { right: -14px; }
+
+@media (max-width: 780px) {
+    .gallery-thumb { flex-basis: calc((100% - 2 * 0.6rem) / 3); }
+}
+
+@media (max-width: 480px) {
+    .gallery-thumb { flex-basis: calc((100% - 1 * 0.6rem) / 2); }
+    .gallery-arrow-prev { left: -6px; }
+    .gallery-arrow-next { right: -6px; }
+}
+
+/* ---------- Product recommendation cards (Amazon etc.) ---------- */
+
+.product-card-image-placeholder {
+    width: 72px;
+    height: 96px;
+    flex-shrink: 0;
+    border: 1px dashed var(--line-strong);
+    border-radius: 2px;
+    background-color: var(--paper-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-soft);
+}
+
+.product-card-image-placeholder svg { width: 22px; height: 22px; opacity: 0.55; }
+
 
 /* ---------- YouTube video embeds ---------- */
 
