@@ -48,26 +48,23 @@
          the visitor's own email app instead. -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-    <div class="brand-bar">
-        <div class="brand-bar-inner">
-            <a href="index.html" class="brand-bar-link"><img src="logo.png" alt="TrekkingWays" class="brand-bar-logo"></a>
-        </div>
-    </div>
-
     <header>
         <div class="header-content">
-            <p class="header-eyebrow">Before you go</p>
-            <h1>The Trekking Gear Checklist</h1>
-            <p class="lede">Everything worth packing for a long-distance trek — most of it just as useful for a single day out. Items marked <span class="badge-multiday">Multi-day</span> are the ones you can usually skip for a short hike.</p>
-            <div class="header-actions">
-                <button type="button" class="btn btn-outline-light checklist-print">Print checklist</button>
-                <form class="checklist-email-form" id="checklist-email-form">
-                    <label for="checklist-email-input" class="sr-only">Your email address</label>
-                    <input type="email" id="checklist-email-input" placeholder="you@example.com" required>
-                    <button type="submit" class="btn btn-outline-light">Email me this checklist</button>
-                </form>
+            <a href="index.html" class="header-logo-link"><img src="logo.png" alt="TrekkingWays" class="header-logo"></a>
+            <div class="header-text">
+                <p class="header-eyebrow">Before you go</p>
+                <h1>The Trekking Gear Checklist</h1>
+                <p class="lede">Everything worth packing for a long-distance trek — most of it just as useful for a single day out. Items marked <span class="badge-multiday">Multi-day</span> are the ones you can usually skip for a short hike.</p>
+                <div class="header-actions">
+                    <button type="button" class="btn btn-outline-light checklist-print">Print checklist</button>
+                    <form class="checklist-email-form" id="checklist-email-form">
+                        <label for="checklist-email-input" class="sr-only">Your email address</label>
+                        <input type="email" id="checklist-email-input" placeholder="you@example.com" required>
+                        <button type="submit" class="btn btn-outline-light">Email me this checklist</button>
+                    </form>
+                </div>
+                <p class="checklist-email-status" id="checklist-email-status" role="status" aria-live="polite"></p>
             </div>
-            <p class="checklist-email-status" id="checklist-email-status" role="status" aria-live="polite"></p>
         </div>
     </header>
 
