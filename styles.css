@@ -194,14 +194,23 @@ header::before {
     min-width: 0;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 900px) {
+    .header-logo {
+        height: 170px;
+    }
+    .header-content {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 560px) {
     .header-content {
         flex-direction: column;
         align-items: flex-start;
         gap: 1.25rem;
     }
     .header-logo {
-        height: 140px;
+        height: 130px;
     }
 }
 
