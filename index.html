@@ -177,7 +177,7 @@
         <div class="teasers-grid">
             <section class="guide-teaser">
                 <div class="guide-teaser-text">
-                    <p class="header-eyebrow">Before you go</p>
+                    <p class="teaser-eyebrow">Before you go</p>
                     <h2>Heading out on a multi-day trek?</h2>
                     <p>Our Trail Prep Guide covers what to expect from daily fatigue, how to train beforehand, and how to keep your feet in good shape from day one to the last mile.</p>
                 </div>
@@ -186,9 +186,9 @@
 
             <section class="guide-teaser">
                 <div class="guide-teaser-text">
-                    <p class="header-eyebrow">Packing</p>
+                    <p class="teaser-eyebrow">Packing</p>
                     <h2>Not sure what to bring?</h2>
-                    <p>Our gear checklist covers everything worth packing, from documents to sleep systems — tick items off, print it, or send it to your own inbox before you go.</p>
+                    <p>Our gear checklist covers everything worth packing, from documents to sleep systems — tick items off, then print it or save it as a PDF before you go.</p>
                 </div>
                 <a href="gear-checklist.html" class="btn btn-brass">Open the Gear Checklist</a>
             </section>
@@ -242,6 +242,17 @@
             searchQuery = e.target.value.trim().toLowerCase();
             filterTours();
         });
+
+        // Support search submitted from the nav bar on other pages
+        // (?q=... in the URL) by pre-filling and applying it here.
+        const urlParams = new URLSearchParams(window.location.search);
+        const incomingQuery = urlParams.get('q');
+        if (incomingQuery) {
+            searchInput.value = incomingQuery;
+            searchQuery = incomingQuery.trim().toLowerCase();
+            filterTours();
+            searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
