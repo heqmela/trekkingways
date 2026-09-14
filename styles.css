@@ -834,61 +834,80 @@ header p.lede {
 
 /* ---------- Gear checklist page ---------- */
 
-.header-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
+.checklist-cta {
+    max-width: 1080px;
+    margin: 3rem auto 2rem;
+    padding: 0 1.5rem;
 }
 
-.header-actions .btn {
-    width: auto;
-    display: inline-flex;
+.checklist-cta-box {
+    background-color: var(--pine);
+    color: #eef2ea;
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    display: flex;
     align-items: center;
-    gap: 0.45rem;
-    padding: 0.6rem 1.1rem;
-}
-
-.btn-outline-light {
-    border-color: rgba(238, 242, 234, 0.55);
-    color: #eef2ea;
-}
-
-.btn-outline-light:hover { background-color: rgba(238, 242, 234, 0.12); color: #eef2ea; }
-
-.checklist-email-form {
-    display: flex;
+    gap: 1.5rem;
     flex-wrap: wrap;
-    gap: 0.5rem;
 }
 
-.checklist-email-form input[type="email"] {
-    padding: 0.55rem 0.85rem;
-    border: 1px solid rgba(238, 242, 234, 0.55);
-    border-radius: 2px;
-    background-color: rgba(238, 242, 234, 0.08);
-    color: #eef2ea;
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    min-width: 200px;
+.checklist-cta-icon {
+    font-size: 2.25rem;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(238, 242, 234, 0.1);
+    border-radius: 50%;
 }
 
-.checklist-email-form input[type="email"]::placeholder { color: #a9c2b0; }
-
-.checklist-email-form input[type="email"]:focus {
-    outline: 2px solid #eef2ea;
-    outline-offset: 1px;
+.checklist-cta-text {
+    flex: 1;
+    min-width: 220px;
 }
 
-.checklist-email-status {
-    margin-top: 0.6rem;
-    font-size: 0.8rem;
-    color: #cfe0d4;
-    min-height: 1.2em;
+.checklist-cta-text h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-bottom: 0.35rem;
 }
 
-.checklist-email-status.is-success { color: #b9e6c4; }
-.checklist-email-status.is-error { color: #f0c4b8; }
+.checklist-cta-text p {
+    font-size: 0.9rem;
+    color: #d6e2d9;
+    max-width: 46ch;
+}
+
+.checklist-cta .btn-brass {
+    flex-shrink: 0;
+    background-color: var(--brass);
+    color: #fffdf8;
+    border-color: var(--brass);
+    padding: 0.75rem 1.4rem;
+    font-size: 0.9rem;
+}
+
+.checklist-cta .btn-brass:hover {
+    background-color: var(--brass-deep);
+    border-color: var(--brass-deep);
+    color: #fffdf8;
+}
+
+@media (max-width: 560px) {
+    .checklist-cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .checklist-cta .btn-brass {
+        width: 100%;
+        text-align: center;
+    }
+}
 
 .sr-only {
     position: absolute;
@@ -1022,8 +1041,8 @@ header p.lede {
 }
 
 @media print {
-    .brand-bar, .page-menu, .header-actions, .checklist-progress,
-    .checklist-email-status, .site-footer, .checklist-note { display: none !important; }
+    .brand-bar, .page-menu, .checklist-progress,
+    .site-footer, .checklist-cta { display: none !important; }
     header { background: none !important; color: var(--ink) !important; padding: 0.5rem 0 1rem !important; }
     header::before { display: none !important; }
     .header-eyebrow, .lede { color: var(--ink-soft) !important; }
@@ -1075,7 +1094,6 @@ header p.lede {
     h1 { font-size: 1.75rem; }
     .tours-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
     .checklist-layout { grid-template-columns: 1fr; }
-    .header-actions { flex-direction: column; align-items: stretch; }
 }
 
 @media (max-width: 480px) {

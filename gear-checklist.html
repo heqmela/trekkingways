@@ -42,12 +42,6 @@
 </head>
 <body>
 
-    <!-- Email sending: EmailJS lets the checklist send straight from the browser,
-         no backend needed. See the setup comment near EMAILJS_CONFIG in checklist.js —
-         until real keys are filled in there, the button below falls back to opening
-         the visitor's own email app instead. -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
     <header>
         <div class="header-content">
             <a href="index.html" class="header-logo-link"><img src="logo.png" alt="TrekkingWays" class="header-logo"></a>
@@ -55,15 +49,6 @@
                 <p class="header-eyebrow">Before you go</p>
                 <h1>The Trekking Gear Checklist</h1>
                 <p class="lede">Everything worth packing for a long-distance trek — most of it just as useful for a single day out. Items marked <span class="badge-multiday">Multi-day</span> are the ones you can usually skip for a short hike.</p>
-                <div class="header-actions">
-                    <button type="button" class="btn btn-outline-light checklist-print">Print checklist</button>
-                    <form class="checklist-email-form" id="checklist-email-form">
-                        <label for="checklist-email-input" class="sr-only">Your email address</label>
-                        <input type="email" id="checklist-email-input" placeholder="you@example.com" required>
-                        <button type="submit" class="btn btn-outline-light">Email me this checklist</button>
-                    </form>
-                </div>
-                <p class="checklist-email-status" id="checklist-email-status" role="status" aria-live="polite"></p>
             </div>
         </div>
     </header>
@@ -208,7 +193,16 @@
 
     </main>
 
-    <p class="checklist-note">Ticks are saved in your browser so you can come back and pick up where you left off. Enter an email above and "Email me this checklist" sends the list straight to that address — no need to open your own email app. "Print checklist" gives you a clean, ink-friendly page.</p>
+    <section class="checklist-cta">
+        <div class="checklist-cta-box">
+            <div class="checklist-cta-icon" aria-hidden="true">🖨️</div>
+            <div class="checklist-cta-text">
+                <h2>Got everything?</h2>
+                <p>Print this checklist or save it as a PDF to take with you offline. Your ticks are saved in this browser too, so you can pick up where you left off.</p>
+            </div>
+            <button type="button" class="btn btn-brass checklist-print">Print / Save as PDF</button>
+        </div>
+    </section>
 
     <footer class="site-footer">
         <p>TrekkingWays curates guided treks from trusted local operators. Some links on this site are affiliate links, including GetYourGuide booking links and, where noted, Amazon product links — if you book or buy through them, we may earn a small commission at no extra cost to you.</p>
