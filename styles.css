@@ -41,7 +41,7 @@ a { color: inherit; }
 
 .brand-bar {
     background-color: var(--pine);
-    padding: 0.5rem 1.5rem;
+    padding: 0.4rem 1.5rem;
 }
 
 .brand-bar-inner {
@@ -63,8 +63,14 @@ a { color: inherit; }
 
 .brand-bar-logo {
     display: block;
-    height: 48px;
+    height: 84px;
     width: auto;
+}
+
+@media (max-width: 640px) {
+    .brand-bar-logo {
+        height: 64px;
+    }
 }
 
 /* ---------- Page menu: site-page navigation only (Routes / Trail Prep Guide) ---------- */
