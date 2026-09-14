@@ -63,14 +63,8 @@ a { color: inherit; }
 
 .brand-bar-logo {
     display: block;
-    height: 84px;
+    height: 48px;
     width: auto;
-}
-
-@media (max-width: 640px) {
-    .brand-bar-logo {
-        height: 64px;
-    }
 }
 
 /* ---------- Page menu: site-page navigation only (Routes / Trail Prep Guide) ---------- */
@@ -179,6 +173,17 @@ header::before {
     max-width: 760px;
     margin: 0 auto;
     text-align: left;
+}
+
+.header-logo-link {
+    display: inline-block;
+    margin-bottom: 1.25rem;
+}
+
+.header-logo {
+    display: block;
+    height: 76px;
+    width: auto;
 }
 
 .header-eyebrow {
