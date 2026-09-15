@@ -3,262 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gear We Recommend — TrekkingWays Gear Shop</title>
-    <meta name="description" content="The trekking gear we've actually used and would buy again — footwear, navigation, sleep systems, hydration and more, organized by category.">
-    <link rel="canonical" href="https://trekkingways.com/gear-shop.html">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
-
-    <!-- Google Analytics (GA4) - trekkingways.com property -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VSWBG74Z71"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-VSWBG74Z71');
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+    <title>Recommended Trekking & Hiking Gear | TrekkingWays</title>
+    <meta name="description" content="Handpicked, field-tested hiking and trekking gear recommended for trail enthusiasts.">
     <link rel="stylesheet" href="styles.css">
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "TrekkingWays recommended gear",
-        "description": "Trekking gear recommendations organized by category.",
-        "url": "https://trekkingways.com/gear-shop.html"
-    }
-    </script>
-
-    <!--
-        HOW TO FILL THIS PAGE IN
-        =========================
-        Every product-card below is a placeholder. For each one:
-        1. Swap the title and description for the actual item you'd
-           recommend and why (one or two honest sentences from real use
-           beats generic marketing copy — it's what makes people trust
-           the pick and actually click through).
-        2. Get the real link + image from Amazon Associates SiteStripe
-           (or whichever affiliate program the item belongs to) and
-           replace the placeholder <a href> and the
-           product-card-image-placeholder block with a real
-           <img class="product-card-image" src="..." alt="..."> tag.
-        3. Replace YOUR-AMAZON-TAG-21 everywhere with your real
-           Associate tag once it's approved.
-        4. Delete any category you don't have picks for yet, or add
-           more product-card blocks inside a category — the grid
-           reflows automatically.
-        Until you do this, each card links to an Amazon search for
-        that item type, so the page still works — it just isn't
-        pointing at your specific picks yet.
-    -->
+    <style>
+        .gear-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .affiliate-disclaimer {
+            background-color: #f8f9fa;
+            border-left: 4px solid #2e7d32;
+            padding: 15px;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .gear-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        .gear-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #fff;
+        }
+        .gear-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+            padding: 15px;
+            background-color: #fafafa;
+        }
+        .gear-card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .gear-title {
+            font-size: 1.25em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        .gear-description {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .btn-amazon {
+            display: inline-block;
+            background-color: #ff9900;
+            color: #111;
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .btn-amazon:hover {
+            background-color: #e68a00;
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <a href="index.html" class="header-logo-link"><img src="logo.png" alt="TrekkingWays" class="header-logo"></a>
-            <div class="header-text">
-                <p class="header-eyebrow">Tried and tested</p>
-                <h1>Gear We Actually Use</h1>
-                <p class="lede">The items that have earned a permanent spot in the pack — picked from real trips, not spec sheets. Buying through these links supports TrekkingWays at no extra cost to you.</p>
-            </div>
+    <div class="gear-container">
+        <h1>Essential Hiking & Outdoor Gear</h1>
+        
+        <!-- Mandatory Amazon Affiliate Disclosure -->
+        <div class="affiliate-disclaimer">
+            <p><strong>Disclosure:</strong> As an Amazon Associate, TrekkingWays earns from qualifying purchases. When you purchase through links on our site, we may earn an affiliate commission at no extra cost to you.</p>
         </div>
-    </header>
 
-    <nav class="page-menu">
-        <div class="page-menu-inner">
-            <div class="nav-pills">
-                <a href="index.html" class="nav-pill">Routes</a>
-                <a href="guide.html" class="nav-pill">Trail Prep Guide</a>
-                <a href="gear-checklist.html" class="nav-pill">Gear Checklist</a>
-                <a href="gear-shop.html" class="nav-pill is-current">Gear Shop</a>
+        <div class="gear-grid">
+            
+            <!-- Product 1 -->
+            <div class="gear-card">
+                <a href="https://amzn.to/4gP1cUE" target="_blank" rel="nofollow noopener noreferrer">
+                    <img src="images/gear/product-1.jpg" alt="Recommended Outdoor Trail Gear">
+                </a>
+                <div class="gear-card-body">
+                    <div>
+                        <h2 class="gear-title">Featured Trail Equipment</h2>
+                        <p class="gear-description">Field-tested outdoor gear selected for reliability and durability on long-distance hikes and rugged trail conditions.</p>
+                    </div>
+                    <a href="https://amzn.to/4gP1cUE" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">
+                        Check Price on Amazon
+                    </a>
+                </div>
             </div>
-            <form class="nav-search" role="search" action="index.html" method="get">
-                <label for="nav-search-input" class="sr-only">Search by destination or keyword</label>
-                <input type="text" id="nav-search-input" name="q" placeholder="Search treks..." autocomplete="off">
-                <button type="submit" class="nav-search-submit" aria-label="Search">&#128269;</button>
-            </form>
+
+            <!-- Product 2 -->
+            <div class="gear-card">
+                <a href="https://amzn.to/4ipRPMk" target="_blank" rel="nofollow noopener noreferrer">
+                    <img src="images/gear/product-2.jpg" alt="Essential Trekking Equipment">
+                </a>
+                <div class="gear-card-body">
+                    <div>
+                        <h2 class="gear-title">Trekking & Hiking Essential</h2>
+                        <p class="gear-description">Essential gear item designed to provide lightweight comfort, weather resistance, and maximum performance during outdoor excursions.</p>
+                    </div>
+                    <a href="https://amzn.to/4ipRPMk" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">
+                        Check Price on Amazon
+                    </a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="gear-card">
+                <a href="https://amzn.to/4gQRWiS" target="_blank" rel="nofollow noopener noreferrer">
+                    <img src="images/gear/product-3.jpg" alt="Outdoor Performance Gear">
+                </a>
+                <div class="gear-card-body">
+                    <div>
+                        <h2 class="gear-title">High-Performance Outdoor Gear</h2>
+                        <p class="gear-description">Top-tier hiking gear built for terrain adaptability and dependable function in varying climate conditions.</p>
+                    </div>
+                    <a href="https://amzn.to/4gQRWiS" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">
+                        Check Price on Amazon
+                    </a>
+                </div>
+            </div>
+
         </div>
-    </nav>
-
-    <main class="shop-layout">
-
-        <section class="shop-category">
-            <h2>Footwear &amp; traction</h2>
-            <p class="shop-category-note">The single item most likely to make or break a trek — worth spending on and breaking in properly before you go.</p>
-            <div class="shop-grid">
-                <a class="product-card" href="https://www.amazon.com/s?k=trail+hiking+shoes&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: trail shoes or boots</div>
-                        <p class="product-card-desc">Replace with the pair you've actually put miles on — what terrain they're best for and how they held up.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-                <a class="product-card" href="https://www.amazon.com/s?k=merino+wool+hiking+socks&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: hiking socks</div>
-                        <p class="product-card-desc">The pair you'd tell a friend to buy two of — why they beat the cheap ones.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="shop-category">
-            <h2>Navigation &amp; safety</h2>
-            <p class="shop-category-note">Cheap insurance for the days when the route doesn't go to plan.</p>
-            <div class="shop-grid">
-                <a class="product-card" href="https://www.amazon.com/s?k=gps+hiking+watch&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: GPS watch or app</div>
-                        <p class="product-card-desc">What you use for offline maps and tracking — battery life on a full trekking day.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-                <a class="product-card" href="https://www.amazon.com/s?k=personal+locator+beacon&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: satellite messenger</div>
-                        <p class="product-card-desc">For multi-day routes out of phone signal — worth it once, even if never used.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="shop-category">
-            <h2>Backpacks &amp; carry</h2>
-            <p class="shop-category-note">Fit matters more than the brand — but a good one disappears on your back.</p>
-            <div class="shop-grid">
-                <a class="product-card" href="https://www.amazon.com/s?k=trekking+backpack&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: trekking backpack</div>
-                        <p class="product-card-desc">The size and fit you'd recommend, and for what length of trip.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-                <a class="product-card" href="https://www.amazon.com/s?k=waterproof+backpack+rain+cover&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: rain cover or pack liner</div>
-                        <p class="product-card-desc">How it's held up in genuinely bad weather, not just a light drizzle.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="shop-category">
-            <h2>Sleep system</h2>
-            <p class="shop-category-note">Where most multi-day trekkers either fall in love with camping or swear off it forever.</p>
-            <div class="shop-grid">
-                <a class="product-card" href="https://www.amazon.com/s?k=lightweight+backpacking+tent&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: tent or shelter</div>
-                        <p class="product-card-desc">Packed weight, setup time, and how it's done in real wind and rain.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-                <a class="product-card" href="https://www.amazon.com/s?k=sleeping+bag+backpacking&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: sleeping bag</div>
-                        <p class="product-card-desc">The temperature rating you actually trust it down to, from experience.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="shop-category">
-            <h2>Hydration &amp; filtration</h2>
-            <p class="shop-category-note">Non-negotiable on any route without a reliable water source.</p>
-            <div class="shop-grid">
-                <a class="product-card" href="https://www.amazon.com/s?k=water+filter+hiking&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: water filter or purifier</div>
-                        <p class="product-card-desc">Flow rate and how many refills before it needs backflushing.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-                <a class="product-card" href="https://www.amazon.com/s?k=hydration+bladder+reservoir&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: bottles or bladder</div>
-                        <p class="product-card-desc">Capacity that's actually enough between refill points on a hot day.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <section class="shop-category">
-            <h2>Tools, repair &amp; extras</h2>
-            <p class="shop-category-note">Small, light, and the reason a minor problem doesn't end a trip early.</p>
-            <div class="shop-grid">
-                <a class="product-card" href="https://www.amazon.com/s?k=headlamp+rechargeable&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: headlamp</div>
-                        <p class="product-card-desc">Runtime on a charge, and how it performs on early starts or late finishes.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-                <a class="product-card" href="https://www.amazon.com/s?k=trekking+poles&tag=YOUR-AMAZON-TAG-21" target="_blank" rel="sponsored noopener">
-                    <div class="product-card-image-placeholder">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v17H6.5A2.5 2.5 0 0 0 4 21.5v-17Z"></path><path d="M4 19a2.5 2.5 0 0 1 2.5-2.5H20"></path></svg>
-                    </div>
-                    <div class="product-card-body">
-                        <div class="product-card-title">Your pick: trekking poles</div>
-                        <p class="product-card-desc">How much they save your knees on the descents that matter.</p>
-                        <div class="product-card-cta">View on Amazon ↗</div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <p>TrekkingWays curates guided treks from trusted local operators. Some links on this site are affiliate links, including GetYourGuide booking links and, where noted, Amazon product links — if you book or buy through them, we may earn a small commission at no extra cost to you. As an Amazon Associate, TrekkingWays earns from qualifying purchases.</p>
-    </footer>
+    </div>
 
 </body>
 </html>
