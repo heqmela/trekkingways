@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trekking Poles &amp; Hiking Socks — Gear Shop | TrekkingWays</title>
-    <meta name="description" content="Trekking poles and hiking socks that walkers buy and rate most, with the technical detail and typical price range for each, so you can match the kit to your trip.">
+    <title>Trekking Poles, Hiking Socks &amp; Water Filters — Gear Shop | TrekkingWays</title>
+    <meta name="description" content="Trekking poles, hiking socks and water filter straws that walkers buy and rate most, with the technical detail and typical price range for each, so you can match the kit to your trip.">
     <link rel="canonical" href="https://trekkingways.com/gear-shop.html">
 
     <!-- Favicons -->
@@ -74,8 +74,18 @@
 
         <p class="gear-intro">Listings change daily, so instead of a fixed price we show the range this kind of item usually sells in, plus the technical detail that decides whether it's right for you. Tap through for the current price on Amazon.</p>
 
+        <div class="gear-toolbar">
+            <div class="filter-pills" id="gear-filters">
+                <span class="filter-pills-label">Show:</span>
+                <button class="filter-pill active" type="button" data-gear-filter="all">All gear</button>
+                <button class="filter-pill" type="button" data-gear-filter="poles">Trekking poles</button>
+                <button class="filter-pill" type="button" data-gear-filter="socks">Trekking socks</button>
+                <button class="filter-pill" type="button" data-gear-filter="water">Water filters</button>
+            </div>
+        </div>
+
         <!-- CATEGORY 1: TREKKING POLES -->
-        <section class="gear-category">
+        <section class="gear-category" id="poles" data-gear-category="poles">
             <div class="gear-category-head">
                 <h2>Trekking poles</h2>
                 <p class="gear-category-note">Roughly a fifth of the load off your knees on descents</p>
@@ -168,7 +178,7 @@
         </section>
 
         <!-- CATEGORY 2: TREKKING SOCKS -->
-        <section class="gear-category">
+        <section class="gear-category" id="socks" data-gear-category="socks">
             <div class="gear-category-head">
                 <h2>Trekking socks</h2>
                 <p class="gear-category-note">The cheapest way to protect the part of you that has to finish the walk</p>
@@ -260,6 +270,102 @@
             </div>
         </section>
 
+        <!-- CATEGORY 3: WATER FILTRATION STRAWS -->
+        <section class="gear-category" id="water" data-gear-category="water">
+            <div class="gear-category-head">
+                <h2>Water filter straws</h2>
+                <p class="gear-category-note">Bacteria and protozoa only — not viruses, salt or chemicals</p>
+            </div>
+
+            <div class="gear-grid">
+
+                <!-- Filter straw 1 -->
+                <article class="gear-card">
+                    <a class="gear-card-media" href="https://amzn.to/3YlyNq0" target="_blank" rel="nofollow noopener noreferrer">
+                        <!-- Placeholder image — replace filterstraw1.jpg with the product photo -->
+                        <img src="filterstraw1.jpg" alt="Personal water filter straw" loading="lazy">
+                    </a>
+                    <div class="gear-card-body">
+                        <p class="gear-card-use">For day walks that cross streams</p>
+                        <h3 class="gear-card-title">Personal water filter straw</h3>
+                        <p class="gear-card-need">Carrying four litres of water costs you four kilos. A straw lets you carry one and refill from whatever you pass, which is the single biggest weight saving available on a hot day route.</p>
+                        <!-- Ken: check these against the live listing before publishing -->
+                        <dl class="gear-specs">
+                            <div class="gear-spec-row"><dt>Filtration</dt><dd>0.1 micron hollow fibre</dd></div>
+                            <div class="gear-spec-row"><dt>Removes</dt><dd>Bacteria, protozoa, microplastics</dd></div>
+                            <div class="gear-spec-row"><dt>Does not remove</dt><dd>Viruses, salt, chemicals</dd></div>
+                            <div class="gear-spec-row"><dt>Lifespan</dt><dd>up to approx. 4,000 L</dd></div>
+                            <div class="gear-spec-row"><dt>Weight</dt><dd>approx. 60 g</dd></div>
+                        </dl>
+                        <div class="gear-card-foot">
+                            <div class="gear-price">
+                                <span class="gear-price-label">Typical range</span>
+                                <span class="gear-price-value">&euro;15–25</span>
+                            </div>
+                            <a href="https://amzn.to/3YlyNq0" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">Check price on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Filter straw 2 -->
+                <article class="gear-card">
+                    <a class="gear-card-media" href="https://amzn.to/3YlyNq0" target="_blank" rel="nofollow noopener noreferrer">
+                        <!-- Placeholder image — replace filterstraw2.jpg with the product photo -->
+                        <img src="filterstraw2.jpg" alt="High-capacity trail filter straw" loading="lazy">
+                    </a>
+                    <div class="gear-card-body">
+                        <p class="gear-card-use">For filling bottles, not just drinking</p>
+                        <h3 class="gear-card-title">High-capacity trail filter straw</h3>
+                        <p class="gear-card-need">Standard bottle threading means you can screw this onto a bottle or a gravity bag and filter for a whole group, instead of everyone taking turns lying face-down at the water&#39;s edge.</p>
+                        <!-- Ken: check these against the live listing before publishing -->
+                        <dl class="gear-specs">
+                            <div class="gear-spec-row"><dt>Fitting</dt><dd>Standard bottle thread</dd></div>
+                            <div class="gear-spec-row"><dt>Filtration</dt><dd>0.1 micron hollow fibre</dd></div>
+                            <div class="gear-spec-row"><dt>Flow rate</dt><dd>approx. 0.5 L per minute</dd></div>
+                            <div class="gear-spec-row"><dt>Lifespan</dt><dd>up to approx. 4,000 L</dd></div>
+                            <div class="gear-spec-row"><dt>Included</dt><dd>Backflush syringe</dd></div>
+                        </dl>
+                        <div class="gear-card-foot">
+                            <div class="gear-price">
+                                <span class="gear-price-label">Typical range</span>
+                                <span class="gear-price-value">&euro;20–35</span>
+                            </div>
+                            <a href="https://amzn.to/3YlyNq0" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">Check price on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Filter straw 3 -->
+                <article class="gear-card">
+                    <a class="gear-card-media" href="https://amzn.to/3YlyNq0" target="_blank" rel="nofollow noopener noreferrer">
+                        <!-- Placeholder image — replace filterstraw3.jpg with the product photo -->
+                        <img src="filterstraw3.jpg" alt="Ultralight survival water filter" loading="lazy">
+                    </a>
+                    <div class="gear-card-body">
+                        <p class="gear-card-use">For the bottom of the pack, all season</p>
+                        <h3 class="gear-card-title">Ultralight survival water filter</h3>
+                        <p class="gear-card-need">Light enough that it lives in the pack whether you plan to use it or not. That is the point: the day you need it is the day the tap at the refuge is dry or the route takes longer than it should have.</p>
+                        <!-- Ken: check these against the live listing before publishing -->
+                        <dl class="gear-specs">
+                            <div class="gear-spec-row"><dt>Filtration</dt><dd>0.1 micron micro-membrane</dd></div>
+                            <div class="gear-spec-row"><dt>Weight</dt><dd>approx. 50 g</dd></div>
+                            <div class="gear-spec-row"><dt>Storage</dt><dd>Dry fully before packing away</dd></div>
+                            <div class="gear-spec-row"><dt>Watch for</dt><dd>Freezing ruins the membrane</dd></div>
+                            <div class="gear-spec-row"><dt>Included</dt><dd>Pouch and lanyard</dd></div>
+                        </dl>
+                        <div class="gear-card-foot">
+                            <div class="gear-price">
+                                <span class="gear-price-label">Typical range</span>
+                                <span class="gear-price-value">&euro;18–30</span>
+                            </div>
+                            <a href="https://amzn.to/3YlyNq0" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">Check price on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
         <div class="teasers-grid">
             <section class="guide-teaser">
                 <div class="guide-teaser-text">
@@ -292,5 +398,22 @@
         <p>TrekkingWays curates guided treks from trusted local operators. Some links on this site are affiliate links, including GetYourGuide booking links and, where noted, Amazon product links — if you book or buy through them, we may earn a small commission at no extra cost to you. As an Amazon Associate, TrekkingWays earns from qualifying purchases.</p>
     </footer>
 
+
+    <script>
+        const gearFilters = document.querySelectorAll('#gear-filters .filter-pill');
+        const gearSections = document.querySelectorAll('.gear-category');
+
+        gearFilters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const choice = btn.getAttribute('data-gear-filter');
+                gearFilters.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                gearSections.forEach(section => {
+                    const match = choice === 'all' || section.getAttribute('data-gear-category') === choice;
+                    section.hidden = !match;
+                });
+            });
+        });
+    </script>
 </body>
 </html>

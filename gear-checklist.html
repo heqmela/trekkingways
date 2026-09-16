@@ -53,12 +53,13 @@
         </div>
     </header>
 
-    <nav class="page-menu">
+    <nav class="page-menu" aria-label="Site sections">
         <div class="page-menu-inner">
             <div class="nav-pills">
                 <a href="index.html" class="nav-pill">Routes</a>
                 <a href="guide.html" class="nav-pill">Trail Prep Guide</a>
-                <a href="gear-checklist.html" class="nav-pill is-current">Gear Checklist</a>
+                <a href="gear-checklist.html" class="nav-pill is-current" aria-current="page">Gear Checklist</a>
+                <a href="gear-shop.html" class="nav-pill">Gear Shop</a>
             </div>
             <form class="nav-search" role="search" action="index.html" method="get">
                 <label for="nav-search-input" class="sr-only">Search by destination or keyword</label>
@@ -208,6 +209,28 @@
             <button type="button" class="btn btn-brass checklist-print">Print / Save as PDF</button>
         </div>
     </section>
+
+    <div class="main-container">
+        <div class="teasers-grid">
+            <section class="guide-teaser">
+                <div class="guide-teaser-text">
+                    <p class="teaser-eyebrow">Kit</p>
+                    <h2>Still missing something from the list?</h2>
+                    <p>Poles, socks and water filters that walkers buy and rate most, with the technical detail and a typical price range for each.</p>
+                </div>
+                <a href="gear-shop.html" class="btn btn-brass">Open the Gear Shop</a>
+            </section>
+
+            <section class="guide-teaser">
+                <div class="guide-teaser-text">
+                    <p class="teaser-eyebrow">Before you go</p>
+                    <h2>First multi-day trek?</h2>
+                    <p>The Trail Prep Guide covers daily fatigue, how to train beforehand, and how to keep your feet in good shape.</p>
+                </div>
+                <a href="guide.html" class="btn btn-brass">Read the Trail Prep Guide</a>
+            </section>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <p>TrekkingWays curates guided treks from trusted local operators. Some links on this site are affiliate links, including GetYourGuide booking links and, where noted, Amazon product links — if you book or buy through them, we may earn a small commission at no extra cost to you.</p>
