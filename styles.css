@@ -1153,3 +1153,182 @@ header p.lede {
     .tours-grid { grid-template-columns: 1fr; }
 }
 
+
+/* ---------- Gear shop ---------- */
+
+.gear-main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.gear-intro {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    max-width: 68ch;
+    margin: 1.75rem 0 0;
+}
+
+.gear-intro + .gear-intro { margin-top: 0.8rem; }
+
+.gear-category { margin-top: 2.5rem; }
+
+.gear-category-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.5rem;
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.4rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.gear-category-head h2 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.45rem;
+}
+
+.gear-category-note {
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+}
+
+.gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.25rem;
+}
+
+.gear-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.18s ease;
+}
+
+.gear-card:hover { border-color: var(--line-strong); }
+
+.gear-card-media {
+    display: block;
+    background-color: var(--paper-deep);
+    border-bottom: 1px solid var(--line);
+}
+
+.gear-card-media img {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.gear-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.gear-card-use {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--brass-deep);
+    margin-bottom: 0.3rem;
+}
+
+.gear-card-title {
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+}
+
+.gear-card-need {
+    font-size: 0.87rem;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+}
+
+.gear-specs {
+    font-size: 0.8rem;
+    border-top: 1px solid var(--line);
+    margin-bottom: 1.1rem;
+}
+
+.gear-spec-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.gear-spec-row dt { color: var(--ink-soft); flex-shrink: 0; }
+.gear-spec-row dd { color: var(--ink); font-weight: 500; text-align: right; }
+
+.gear-card-foot { margin-top: auto; }
+
+.gear-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 0.7rem;
+}
+
+.gear-price-label { font-size: 0.75rem; color: var(--ink-soft); }
+
+.gear-price-value {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--ink);
+}
+
+.btn-amazon {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--brass);
+    border: 1px solid var(--brass);
+    color: #fffdf8;
+    padding: 0.55rem 1rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.btn-amazon:hover {
+    background-color: var(--brass-deep);
+    border-color: var(--brass-deep);
+}
+
+.gear-disclosure {
+    max-width: 68ch;
+    margin: 2.75rem 0 0;
+    padding: 1rem 1.15rem;
+    background-color: var(--paper-deep);
+    border-left: 3px solid var(--brass);
+    border-radius: 0 2px 2px 0;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+}
+
+.gear-disclosure p + p { margin-top: 0.5rem; }
+.gear-disclosure strong { color: var(--ink); }
+
+/* Keyboard focus, site-wide */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+}

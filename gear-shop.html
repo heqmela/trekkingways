@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recommended Trekking & Hiking Gear | TrekkingWays</title>
-    <meta name="description" content="Handpicked, field-tested hiking poles and trekking socks recommended for trail enthusiasts.">
+    <title>Trekking Poles &amp; Hiking Socks — Gear Shop | TrekkingWays</title>
+    <meta name="description" content="Trekking poles and hiking socks that walkers buy and rate most, with the technical detail and typical price range for each, so you can match the kit to your trip.">
     <link rel="canonical" href="https://trekkingways.com/gear-shop.html">
 
     <!-- Favicons -->
@@ -27,86 +27,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .gear-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .affiliate-disclaimer {
-            background-color: #f8f9fa;
-            border-left: 4px solid #2e7d32;
-            padding: 15px;
-            margin-bottom: 30px;
-            font-size: 0.9em;
-            color: #555;
-        }
-        .category-title {
-            font-family: 'Fraunces', serif;
-            font-size: 1.8em;
-            color: #222;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 8px;
-        }
-        .gear-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        .gear-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background: #fff;
-        }
-        .gear-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: contain;
-            padding: 15px;
-            background-color: #fafafa;
-        }
-        .gear-card-body {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .gear-title {
-            font-size: 1.25em;
-            margin-top: 0;
-            margin-bottom: 10px;
-            color: #222;
-        }
-        .gear-description {
-            font-size: 0.95em;
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        .btn-amazon {
-            display: inline-block;
-            background-color: #ff9900;
-            color: #111;
-            text-align: center;
-            padding: 12px 20px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background 0.2s ease;
-        }
-        .btn-amazon:hover {
-            background-color: #e68a00;
-        }
-    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Routes", "item": "https://trekkingways.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Gear Shop", "item": "https://trekkingways.com/gear-shop.html" }
+        ]
+    }
+    </script>
 </head>
 <body>
 
@@ -114,137 +45,245 @@
         <div class="header-content">
             <a href="index.html" class="header-logo-link"><img src="logo.png" alt="TrekkingWays" class="header-logo"></a>
             <div class="header-text">
-                <p class="header-eyebrow">Field-Tested Equipment</p>
-                <h1>Recommended Gear Shop</h1>
-                <p class="lede">Essential trekking poles and merino performance socks handpicked for comfort and reliability on the trail.</p>
+                <p class="header-eyebrow">What trekkers actually buy</p>
+                <h1>Gear for the trail ahead</h1>
+                <p class="lede">Poles and socks that long-distance walkers keep buying and rating well — with the technical detail you need to match them to your trip.</p>
             </div>
         </div>
     </header>
 
-    <nav class="page-menu">
+    <nav class="page-menu" aria-label="Site sections">
         <div class="page-menu-inner">
             <div class="nav-pills">
                 <a href="index.html" class="nav-pill">Routes</a>
                 <a href="guide.html" class="nav-pill">Trail Prep Guide</a>
                 <a href="gear-checklist.html" class="nav-pill">Gear Checklist</a>
-                <a href="gear-shop.html" class="nav-pill is-current">Gear Shop</a>
+                <a href="gear-shop.html" class="nav-pill is-current" aria-current="page">Gear Shop</a>
             </div>
+            <form class="nav-search" role="search" action="index.html" method="get">
+                <label for="nav-search-input" class="sr-only">Search by destination or keyword</label>
+                <input type="text" id="nav-search-input" name="q" placeholder="Search treks..." autocomplete="off">
+                <button type="submit" class="nav-search-submit" aria-label="Search">&#128269;</button>
+            </form>
         </div>
     </nav>
 
-    <main class="gear-container">
-        
-        <!-- Mandatory Amazon Affiliate Disclosure -->
-        <div class="affiliate-disclaimer">
-            <p><strong>Disclosure:</strong> As an Amazon Associate, TrekkingWays earns from qualifying purchases. When you purchase through links on our site, we may earn an affiliate commission at no extra cost to you.</p>
-        </div>
+    <main class="gear-main">
+
+        <p class="gear-intro">We pick gear the same way we pick routes: by starting with what thousands of other walkers have already bought and rated highly, rather than by guessing. Anything that stays near the top of its category on Amazon has been through more trail testing than any single reviewer could manage, so that popularity is our filter — then we look at whether the specs actually suit multi-day walking.</p>
+
+        <p class="gear-intro">Listings change daily, so instead of a fixed price we show the range this kind of item usually sells in, plus the technical detail that decides whether it's right for you. Tap through for the current price on Amazon.</p>
 
         <!-- CATEGORY 1: TREKKING POLES -->
-        <h2 class="category-title">Trekking Poles</h2>
-        <div class="gear-grid">
-            
-            <!-- Trekking Pole 1 -->
-            <div class="gear-card">
-                <a href="https://amzn.to/46vWFAv" target="_blank" rel="nofollow noopener noreferrer">
-                    <img src="trekpole1.jpg" alt="Trekking Poles Model 1">
-                </a>
-                <div class="gear-card-body">
-                    <div>
-                        <h3 class="gear-title">Ultralight Trail Trekking Poles</h3>
-                        <p class="gear-description">Durable, lightweight trekking poles engineered to reduce knee impact and improve balance across steep terrain.</p>
-                    </div>
-                    <a href="https://amzn.to/46vWFAv" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">
-                        Check Price on Amazon
-                    </a>
-                </div>
+        <section class="gear-category">
+            <div class="gear-category-head">
+                <h2>Trekking poles</h2>
+                <p class="gear-category-note">Roughly a fifth of the load off your knees on descents</p>
             </div>
 
-            <!-- Trekking Pole 2 -->
-            <div class="gear-card">
-                <a href="https://amzn.to/4rc9Srw" target="_blank" rel="nofollow noopener noreferrer">
-                    <img src="trekpole2.jpg" alt="Trekking Poles Model 2">
-                </a>
-                <div class="gear-card-body">
-                    <div>
-                        <h3 class="gear-title">Adjustable Compact Hiking Poles</h3>
-                        <p class="gear-description">Collapsible hiking poles built with quick-lock adjustment mechanisms for easy packability and terrain adaptation.</p>
-                    </div>
-                    <a href="https://amzn.to/4rc9Srw" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">
-                        Check Price on Amazon
-                    </a>
-                </div>
-            </div>
+            <div class="gear-grid">
 
-            <!-- Trekking Pole 3 -->
-            <div class="gear-card">
-                <a href="https://amzn.to/4y9fm96" target="_blank" rel="nofollow noopener noreferrer">
-                    <img src="trekpole3.jpg" alt="Trekking Poles Model 3">
-                </a>
-                <div class="gear-card-body">
-                    <div>
-                        <h3 class="gear-title">All-Terrain Shock-Absorbing Poles</h3>
-                        <p class="gear-description">Heavy-duty trekking poles designed for maximum stability and anti-shock performance on rugged alpine trails.</p>
-                    </div>
-                    <a href="https://amzn.to/4y9fm96" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">
-                        Check Price on Amazon
+                <!-- Trekking Pole 1 -->
+                <article class="gear-card">
+                    <a class="gear-card-media" href="https://amzn.to/46vWFAv" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="trekpole1.jpg" alt="Ultralight trail trekking poles" loading="lazy">
                     </a>
-                </div>
-            </div>
+                    <div class="gear-card-body">
+                        <p class="gear-card-use">For long days with a light pack</p>
+                        <h3 class="gear-card-title">Ultralight trail trekking poles</h3>
+                        <p class="gear-card-need">You plant a pole roughly 1,500 times an hour, so every 50 g in the shaft is felt in the shoulders by mid-afternoon. A light pair is the one worth carrying when the day is long and the pack is small.</p>
+                        <!-- Ken: check these against the live listing before publishing -->
+                        <dl class="gear-specs">
+                            <div class="gear-spec-row"><dt>Shaft</dt><dd>Carbon / 7075 alloy</dd></div>
+                            <div class="gear-spec-row"><dt>Weight, pair</dt><dd>approx. 450–500 g</dd></div>
+                            <div class="gear-spec-row"><dt>Length range</dt><dd>65–135 cm</dd></div>
+                            <div class="gear-spec-row"><dt>Grip</dt><dd>EVA foam, padded strap</dd></div>
+                            <div class="gear-spec-row"><dt>Tips</dt><dd>Carbide, rubber feet + baskets</dd></div>
+                        </dl>
+                        <div class="gear-card-foot">
+                            <div class="gear-price">
+                                <span class="gear-price-label">Typical range</span>
+                                <span class="gear-price-value">&euro;30–55</span>
+                            </div>
+                            <a href="https://amzn.to/46vWFAv" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">Check price on Amazon</a>
+                        </div>
+                    </div>
+                </article>
 
-        </div>
+                <!-- Trekking Pole 2 -->
+                <article class="gear-card">
+                    <a class="gear-card-media" href="https://amzn.to/4rc9Srw" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="trekpole2.jpg" alt="Adjustable compact hiking poles" loading="lazy">
+                    </a>
+                    <div class="gear-card-body">
+                        <p class="gear-card-use">For flying to the trailhead</p>
+                        <h3 class="gear-card-title">Adjustable compact hiking poles</h3>
+                        <p class="gear-card-need">Poles that collapse short enough to go inside a 40 L pack save you checking a bag, and the quick-lock sections let you shorten them for a climb and lengthen them for the way back down without stopping to fiddle.</p>
+                        <!-- Ken: check these against the live listing before publishing -->
+                        <dl class="gear-specs">
+                            <div class="gear-spec-row"><dt>Construction</dt><dd>3-section telescopic</dd></div>
+                            <div class="gear-spec-row"><dt>Packed length</dt><dd>approx. 60–65 cm</dd></div>
+                            <div class="gear-spec-row"><dt>Weight, pair</dt><dd>approx. 500–560 g</dd></div>
+                            <div class="gear-spec-row"><dt>Locking</dt><dd>External lever clamp</dd></div>
+                            <div class="gear-spec-row"><dt>Grip</dt><dd>Cork-feel, extended foam</dd></div>
+                        </dl>
+                        <div class="gear-card-foot">
+                            <div class="gear-price">
+                                <span class="gear-price-label">Typical range</span>
+                                <span class="gear-price-value">&euro;25–45</span>
+                            </div>
+                            <a href="https://amzn.to/4rc9Srw" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">Check price on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trekking Pole 3 -->
+                <article class="gear-card">
+                    <a class="gear-card-media" href="https://amzn.to/4y9fm96" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="trekpole3.jpg" alt="All-terrain shock-absorbing trekking poles" loading="lazy">
+                    </a>
+                    <div class="gear-card-body">
+                        <p class="gear-card-use">For steep descents under load</p>
+                        <h3 class="gear-card-title">All-terrain shock-absorbing poles</h3>
+                        <p class="gear-card-need">On volcanic scree or a long zigzag down, the spring damping takes the jolt out of each plant and the wider baskets stop the tips sinking. Heavier than a racing pole, and worth it on rough ground.</p>
+                        <!-- Ken: check these against the live listing before publishing -->
+                        <dl class="gear-specs">
+                            <div class="gear-spec-row"><dt>Anti-shock</dt><dd>Internal spring, switchable</dd></div>
+                            <div class="gear-spec-row"><dt>Weight, pair</dt><dd>approx. 550–620 g</dd></div>
+                            <div class="gear-spec-row"><dt>Length range</dt><dd>65–135 cm</dd></div>
+                            <div class="gear-spec-row"><dt>Tips</dt><dd>Carbide, mud + snow baskets</dd></div>
+                            <div class="gear-spec-row"><dt>Straps</dt><dd>Padded, adjustable</dd></div>
+                        </dl>
+                        <div class="gear-card-foot">
+                            <div class="gear-price">
+                                <span class="gear-price-label">Typical range</span>
+                                <span class="gear-price-value">&euro;35–65</span>
+                            </div>
+                            <a href="https://amzn.to/4y9fm96" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">Check price on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
 
         <!-- CATEGORY 2: TREKKING SOCKS -->
-        <h2 class="category-title">Trekking Socks</h2>
-        <div class="gear-grid">
-            
-            <!-- Trekking Sock 1 -->
-            <div class="gear-card">
-                <a href="https://amzn.to/4dfI5kk" target="_blank" rel="nofollow noopener noreferrer">
-                    <img src="treksock1.jpg" alt="Trekking Socks Model 1">
-                </a>
-                <div class="gear-card-body">
-                    <div>
-                        <h3 class="gear-title">Merino Wool Anti-Blister Hiking Socks</h3>
-                        <p class="gear-description">High-density Merino wool blend offering moisture-wicking climate control and cushioned blister protection.</p>
-                    </div>
-                    <a href="https://amzn.to/4dfI5kk" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">
-                        Check Price on Amazon
-                    </a>
-                </div>
+        <section class="gear-category">
+            <div class="gear-category-head">
+                <h2>Trekking socks</h2>
+                <p class="gear-category-note">The cheapest way to protect the part of you that has to finish the walk</p>
             </div>
 
-            <!-- Trekking Sock 2 -->
-            <div class="gear-card">
-                <a href="https://amzn.to/4ixLUVx" target="_blank" rel="nofollow noopener noreferrer">
-                    <img src="treksock2.jpg" alt="Trekking Socks Model 2">
-                </a>
-                <div class="gear-card-body">
-                    <div>
-                        <h3 class="gear-title">Cushioned Mid-Crew Trail Socks</h3>
-                        <p class="gear-description">Reinforced heel and toe padding designed for long-distance comfort and durability inside heavy hiking boots.</p>
-                    </div>
-                    <a href="https://amzn.to/4ixLUVx" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">
-                        Check Price on Amazon
-                    </a>
-                </div>
-            </div>
+            <div class="gear-grid">
 
-            <!-- Trekking Sock 3 -->
-            <div class="gear-card">
-                <a href="https://amzn.to/4cJdzPF" target="_blank" rel="nofollow noopener noreferrer">
-                    <img src="treksock3.jpg" alt="Trekking Socks Model 3">
-                </a>
-                <div class="gear-card-body">
-                    <div>
-                        <h3 class="gear-title">All-Weather Outdoor Trekking Socks</h3>
-                        <p class="gear-description">Breathable, odor-resistant outdoor socks engineered for temperature regulation across multi-day treks.</p>
-                    </div>
-                    <a href="https://amzn.to/4cJdzPF" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">
-                        Check Price on Amazon
+                <!-- Trekking Sock 1 -->
+                <article class="gear-card">
+                    <a class="gear-card-media" href="https://amzn.to/4dfI5kk" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="treksock1.jpg" alt="Merino wool anti-blister hiking socks" loading="lazy">
                     </a>
-                </div>
-            </div>
+                    <div class="gear-card-body">
+                        <p class="gear-card-use">For back-to-back walking days</p>
+                        <h3 class="gear-card-title">Merino wool anti-blister hiking socks</h3>
+                        <p class="gear-card-need">Blisters come from damp skin rubbing, not from distance. Merino holds its warmth when wet, moves sweat out faster than cotton, and can be worn a second day without smelling — which matters when you're washing socks in a sink.</p>
+                        <!-- Ken: check these against the live listing before publishing -->
+                        <dl class="gear-specs">
+                            <div class="gear-spec-row"><dt>Blend</dt><dd>Merino, nylon, elastane</dd></div>
+                            <div class="gear-spec-row"><dt>Cushioning</dt><dd>Full terry loop footbed</dd></div>
+                            <div class="gear-spec-row"><dt>Height</dt><dd>Crew, above boot cuff</dd></div>
+                            <div class="gear-spec-row"><dt>Season</dt><dd>3-season, midweight</dd></div>
+                            <div class="gear-spec-row"><dt>Care</dt><dd>Machine wash 30&deg;C, no tumble</dd></div>
+                        </dl>
+                        <div class="gear-card-foot">
+                            <div class="gear-price">
+                                <span class="gear-price-label">Typical range</span>
+                                <span class="gear-price-value">&euro;15–30</span>
+                            </div>
+                            <a href="https://amzn.to/4dfI5kk" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">Check price on Amazon</a>
+                        </div>
+                    </div>
+                </article>
 
+                <!-- Trekking Sock 2 -->
+                <article class="gear-card">
+                    <a class="gear-card-media" href="https://amzn.to/4ixLUVx" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="treksock2.jpg" alt="Cushioned mid-crew trail socks" loading="lazy">
+                    </a>
+                    <div class="gear-card-body">
+                        <p class="gear-card-use">For stiff boots and rocky ground</p>
+                        <h3 class="gear-card-title">Cushioned mid-crew trail socks</h3>
+                        <p class="gear-card-need">A heavier boot needs padding where it bites: the heel cup, the toe box, and the ankle bone. The extra height keeps the boot cuff off your shin on long climbs, and the arch band stops the sock creeping.</p>
+                        <!-- Ken: check these against the live listing before publishing -->
+                        <dl class="gear-specs">
+                            <div class="gear-spec-row"><dt>Cushioning</dt><dd>Reinforced heel and toe</dd></div>
+                            <div class="gear-spec-row"><dt>Height</dt><dd>Mid-crew</dd></div>
+                            <div class="gear-spec-row"><dt>Blend</dt><dd>Wool-synthetic mix</dd></div>
+                            <div class="gear-spec-row"><dt>Fit</dt><dd>Compression arch band</dd></div>
+                            <div class="gear-spec-row"><dt>Sold as</dt><dd>Multipack</dd></div>
+                        </dl>
+                        <div class="gear-card-foot">
+                            <div class="gear-price">
+                                <span class="gear-price-label">Typical range</span>
+                                <span class="gear-price-value">&euro;12–25</span>
+                            </div>
+                            <a href="https://amzn.to/4ixLUVx" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">Check price on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trekking Sock 3 -->
+                <article class="gear-card">
+                    <a class="gear-card-media" href="https://amzn.to/4cJdzPF" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="treksock3.jpg" alt="All-weather outdoor trekking socks" loading="lazy">
+                    </a>
+                    <div class="gear-card-body">
+                        <p class="gear-card-use">For trips that start hot and finish cold</p>
+                        <h3 class="gear-card-title">All-weather outdoor trekking socks</h3>
+                        <p class="gear-card-need">A summit day can cross 20&deg;C between the car park and the crater rim. Ventilation panels over the instep and a flat toe seam let one pair cover that spread without your feet either cooking or going numb.</p>
+                        <!-- Ken: check these against the live listing before publishing -->
+                        <dl class="gear-specs">
+                            <div class="gear-spec-row"><dt>Blend</dt><dd>Merino with synthetic wicking yarn</dd></div>
+                            <div class="gear-spec-row"><dt>Ventilation</dt><dd>Mesh instep panels</dd></div>
+                            <div class="gear-spec-row"><dt>Toe seam</dt><dd>Flat-stitched</dd></div>
+                            <div class="gear-spec-row"><dt>Weight</dt><dd>Midweight</dd></div>
+                            <div class="gear-spec-row"><dt>Sold as</dt><dd>Multipack</dd></div>
+                        </dl>
+                        <div class="gear-card-foot">
+                            <div class="gear-price">
+                                <span class="gear-price-label">Typical range</span>
+                                <span class="gear-price-value">&euro;15–28</span>
+                            </div>
+                            <a href="https://amzn.to/4cJdzPF" target="_blank" rel="nofollow noopener noreferrer" class="btn-amazon">Check price on Amazon</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <div class="teasers-grid">
+            <section class="guide-teaser">
+                <div class="guide-teaser-text">
+                    <p class="teaser-eyebrow">Packing</p>
+                    <h2>Working out what else to bring?</h2>
+                    <p>The gear checklist covers everything worth packing, from documents to sleep systems — tick items off, then print it or save it as a PDF.</p>
+                </div>
+                <a href="gear-checklist.html" class="btn btn-brass">Open the Gear Checklist</a>
+            </section>
+
+            <section class="guide-teaser">
+                <div class="guide-teaser-text">
+                    <p class="teaser-eyebrow">Where to use it</p>
+                    <h2>Still choosing a trek?</h2>
+                    <p>Coastal paths, day walks and summit routes, each led by a local guide and bookable straight from the listing.</p>
+                </div>
+                <a href="index.html" class="btn btn-brass">Browse the routes</a>
+            </section>
+        </div>
+
+        <!-- Affiliate disclosure and pricing note: kept at the foot of the page, above the site footer -->
+        <div class="gear-disclosure">
+            <p><strong>About the prices:</strong> Amazon prices move daily, so the ranges above are what this type of item usually sells for rather than a quoted price. The figure on Amazon at the time you click is the one that counts.</p>
+            <p><strong>Disclosure:</strong> As an Amazon Associate, TrekkingWays earns from qualifying purchases. If you buy through a link on this page we may earn a small commission, at no extra cost to you.</p>
         </div>
 
     </main>
